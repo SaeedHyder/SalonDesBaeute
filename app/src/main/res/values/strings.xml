@@ -132,7 +132,8 @@
     <string name="confirm_password_error">Confirm Password did not match</string>
     <string name="same_password_error">New password should be changed from old password</string>
     <string name="enter_name">Enter your Name</string>
-    <string name="terms_and_condition">Terms And Condition</string>
+    <string name="terms_and_condition">Terms And Conditions</string>
+    <string name="about_us">About Us</string>
     <string name="samePassword">New password should be changed from previous password</string>
     <string name="conform_password_error">confirm password does not match</string>
     <string name="enter_confirm_password">Confirm Password Field cannot be Empty</string>
@@ -141,5 +142,10 @@
     <string name="featured_parlours_services">Featured Parlours &amp; Services</string>
     <string name="top_parlours_near_you">Top Parlours Near You</string>
     <string name="view_profile">View Profile</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="are_you_sure_you_want_to_logout">Are you sure you want to signout?</string>
+    <string name="logout">Logout</string>
+    <string name="signout">Sign Out</string>
 
 </resources>
