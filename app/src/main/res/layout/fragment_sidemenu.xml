@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background12"
+    android:orientation="vertical">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/x10"
+        android:layout_marginEnd="@dimen/x10"
+        android:layout_weight="0.2">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image"/>
+
+        <com.app.salonbeaute.ui.views.AnyTextView
+            android:id="@+id/full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Christy T Sessions"
+            android:layout_marginStart="@dimen/x10"
+            android:layout_marginTop="@dimen/x5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x15"
+            android:layout_toEndOf="@+id/profileImage"
+            app:typeface="@string/font_normal"/>
+
+        <com.app.salonbeaute.ui.views.AnyTextView
+            android:id="@+id/view_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_profile"
+            android:layout_marginStart="@dimen/x10"
+            android:textColor="@color/app_red_dark"
+            android:textSize="@dimen/x13"
+            android:layout_toEndOf="@+id/profileImage"
+            android:layout_below="@+id/full_name"
+            app:typeface="@string/font_normal"/>
+
+    </RelativeLayout>
+
+    <com.app.salonbeaute.ui.views.CustomRecyclerView
+        android:id="@+id/SideMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        />
+</LinearLayout>
