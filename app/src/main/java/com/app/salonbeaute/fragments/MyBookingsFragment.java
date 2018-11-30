@@ -2,22 +2,37 @@ package com.app.salonbeaute.fragments;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
+import com.app.salonbeaute.interfaces.RecyclerClickListner;
+import com.app.salonbeaute.ui.binders.MyBookingsBinder;
+import com.app.salonbeaute.ui.views.CustomRecyclerView;
 import com.app.salonbeaute.ui.views.TitleBar;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class MyBookingsFragment extends BaseFragment {
+public class MyBookingsFragment extends BaseFragment implements RecyclerClickListner {
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
     Unbinder unbinder;
+    @BindView(R.id.btnBack)
+    ImageView btnBack;
+    @BindView(R.id.rl_bookings)
+    CustomRecyclerView rlBookings;
+
+    private ArrayList<String> collection;
 
     public static MyBookingsFragment newInstance() {
         Bundle args = new Bundle();
@@ -48,6 +63,7 @@ public class MyBookingsFragment extends BaseFragment {
 
         setTabLayout();
 
+
     }
 
     private void setTabLayout() {
@@ -57,12 +73,13 @@ public class MyBookingsFragment extends BaseFragment {
             tabLayout.addTab(tabLayout.newTab().setText(getResString(R.string.up_coming)));
             tabLayout.addTab(tabLayout.newTab().setText(getResString(R.string.previous)));
             tabLayout.getTabAt(0).select();
+            setData();
 
             tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
                 @Override
                 public void onTabSelected(TabLayout.Tab tab) {
 
-                  //  setTabIcon(tab);
+                    setData();
                 }
 
                 @Override
@@ -78,6 +95,26 @@ public class MyBookingsFragment extends BaseFragment {
         }
     }
 
+    private void setData() {
+
+        collection = new ArrayList<>();
+        collection.add("");
+        collection.add("");
+        collection.add("");
+        collection.add("");
+        collection.add("");
+        collection.add("");
+        collection.add("");
+        collection.add("");
+        collection.add("");
+        collection.add("");
+
+
+        rlBookings.BindRecyclerView(new MyBookingsBinder(getDockActivity(), prefHelper, this), collection,
+                new LinearLayoutManager(getDockActivity(), LinearLayoutManager.VERTICAL, false)
+                , new DefaultItemAnimator());
+    }
+
 
     @Override
     public void setTitleBar(TitleBar titleBar) {
@@ -85,9 +122,15 @@ public class MyBookingsFragment extends BaseFragment {
         titleBar.hideTitleBar();
     }
 
+
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
+    public void onClick(Object entity, int position) {
+
+    }
+
+
+    @OnClick(R.id.btnBack)
+    public void onViewClicked() {
+        getDockActivity().popFragment();
     }
 }
