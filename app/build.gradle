@@ -61,6 +61,7 @@ dependencies {
     implementation 'me.relex:circleindicator:1.2.2@aar'
 
 
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation('com.andreabaccega:android-form-edittext:1.2.1@aar') { exclude module: 'design' }
     implementation project(':commons-lang3-3.1')

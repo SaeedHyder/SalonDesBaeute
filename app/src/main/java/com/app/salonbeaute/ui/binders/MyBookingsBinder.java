@@ -1,9 +1,10 @@
 package com.app.salonbeaute.ui.binders;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.activities.DockActivity;
@@ -17,16 +18,15 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
-public class SideMenuBinder extends RecyclerViewBinder<SideMenuEnt> {
+public class MyBookingsBinder extends RecyclerViewBinder<String> {
 
     private DockActivity dockActivity;
     private BasePreferenceHelper prefHelper;
     private ImageLoader imageLoader;
     private RecyclerClickListner clickListner;
 
-    public SideMenuBinder(DockActivity dockActivity, BasePreferenceHelper prefHelper, RecyclerClickListner clickListner) {
-        super(R.layout.row_item_sidemenu);
+    public MyBookingsBinder(DockActivity dockActivity, BasePreferenceHelper prefHelper, RecyclerClickListner clickListner) {
+        super(R.layout.row_item_booking);
         this.dockActivity = dockActivity;
         this.prefHelper = prefHelper;
         this.imageLoader = ImageLoader.getInstance();
@@ -39,36 +39,28 @@ public class SideMenuBinder extends RecyclerViewBinder<SideMenuEnt> {
     }
 
     @Override
-    public void bindView(SideMenuEnt entity, int position, Object viewHolder, Context context) {
+    public void bindView(String entity, int position, Object viewHolder, Context context) {
 
         final ViewHolder holder = (ViewHolder) viewHolder;
-        if (position == 0) {
-            holder.llItem.setBackground(dockActivity.getResources().getDrawable(R.drawable.active_bg));
-        } else {
-            holder.llItem.setBackground(dockActivity.getResources().getDrawable(R.color.transparent));
-        }
-
-        holder.txtItemName.setText(entity.getTitle());
-        holder.icon.setImageResource(entity.getImage());
-
-        holder.llItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clickListner.onClick(entity, position);
-            }
-        });
 
 
     }
 
 
-    static class ViewHolder extends BaseViewHolder {
-        @BindView(R.id.icon)
-        ImageView icon;
-        @BindView(R.id.txt_item_name)
-        AnyTextView txtItemName;
-        @BindView(R.id.ll_item)
-        LinearLayout llItem;
+    static class ViewHolder extends BaseViewHolder{
+
+        @BindView(R.id.txt_month)
+        AnyTextView txtMonth;
+        @BindView(R.id.txt_date)
+        AnyTextView txtDate;
+        @BindView(R.id.txt_time)
+        AnyTextView txtTime;
+        @BindView(R.id.rl_calendar)
+        RelativeLayout rlCalendar;
+        @BindView(R.id.title)
+        AnyTextView title;
+        @BindView(R.id.card_view)
+        CardView cardView;
 
         ViewHolder(View view) {
             super(view);

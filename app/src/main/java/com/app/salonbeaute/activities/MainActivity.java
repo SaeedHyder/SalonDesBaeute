@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
@@ -19,6 +18,7 @@ import com.app.salonbeaute.fragments.HomeFragment;
 import com.app.salonbeaute.fragments.LoginFragment;
 import com.app.salonbeaute.fragments.NotificationsFragment;
 import com.app.salonbeaute.fragments.SideMenuFragment;
+import com.app.salonbeaute.fragments.TutorialFragment;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
 import com.app.salonbeaute.global.SideMenuChooser;
 import com.app.salonbeaute.global.SideMenuDirection;
@@ -182,7 +182,7 @@ public class MainActivity extends DockActivity implements OnClickListener {
         if (prefHelper.isLogin()) {
             replaceDockableFragment(HomeFragment.newInstance(), "HomeFragment");
         } else {
-            replaceDockableFragment(LoginFragment.newInstance(), "LoginFragment");
+            replaceDockableFragment(TutorialFragment.newInstance(), "TutorialFragment");
         }
     }
 

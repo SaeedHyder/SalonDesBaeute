@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_bar_bg"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x50">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x10"
+            android:padding="@dimen/x13"
+            android:scaleType="fitXY"
+            android:src="@drawable/back"
+            android:visibility="visible" />
+
+
+        <com.app.salonbeaute.ui.views.AnyTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/my_bookings"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x18"
+            app:typeface="OpenSans-Regular.ttf" />
+
+
+
+    </RelativeLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x50"
+        app:tabBackground="@drawable/selector_tab_layout"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/app_text_color_login"
+        app:tabIndicator="@color/tab_layout_color"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabMode="fixed" />
+
+    </LinearLayout>
+
+    <com.app.salonbeaute.ui.views.CustomRecyclerView
+        android:id="@+id/rl_bookings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

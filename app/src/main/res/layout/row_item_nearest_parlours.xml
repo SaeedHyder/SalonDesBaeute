@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/x50"
                 android:layout_alignParentBottom="true"
-                android:background="#7F000000"
+                android:background="#DF000000"
                 android:gravity="center"
                 android:paddingStart="@dimen/x8"
                 android:paddingEnd="@dimen/x8">

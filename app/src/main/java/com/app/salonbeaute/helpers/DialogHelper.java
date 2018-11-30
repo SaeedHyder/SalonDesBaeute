@@ -57,6 +57,17 @@ public class DialogHelper {
         return this.dialog;
     }
 
+    public Dialog initlogout( View.OnClickListener yesListner, View.OnClickListener noListner) {
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        this.dialog.setContentView(R.layout.dialoge_logout);
+        Button btnYes = (Button) dialog.findViewById(R.id.btn_yes);
+        btnYes.setOnClickListener(yesListner);
+        Button btnNo = (Button) dialog.findViewById(R.id.btn_No);
+        btnNo.setOnClickListener(noListner);
+        return this.dialog;
+    }
+
 
     public void showDialog() {
 
