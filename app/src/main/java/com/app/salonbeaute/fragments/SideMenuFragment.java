@@ -105,13 +105,13 @@ public class SideMenuFragment extends BaseFragment implements RecyclerClickListn
             getMainActivity().closeDrawer();
 
         } else if (ent.getTitle().equals(AppConstants.AboutSalonDesBeaute)) {
-            UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+            getDockActivity().replaceDockableFragment(AboutUsFragment.newInstance(),"AboutUsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.ContactUs)) {
-            UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+            getDockActivity().replaceDockableFragment(ContactUsFragment.newInstance(),"ContactUsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.MyBookings)) {
-            UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+            getDockActivity().replaceDockableFragment(MyBookingsFragment.newInstance(),"MyBookingsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.Promotions)) {
             UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
@@ -120,7 +120,7 @@ public class SideMenuFragment extends BaseFragment implements RecyclerClickListn
             UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
 
         } else if (ent.getTitle().equals(AppConstants.Notifications)) {
-            UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+            getDockActivity().replaceDockableFragment(NotificationsFragment.newInstance(),"NotificationsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.Settings)) {
             UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));

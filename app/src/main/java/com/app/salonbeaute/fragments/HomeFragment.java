@@ -85,12 +85,12 @@ public class HomeFragment extends BaseFragment {
             lvFitnessClasses.setVisibility(View.VISIBLE);
         }*/
         parlourCollection = new ArrayList<>();
-        parlourCollection.add("drawable://" + R.drawable.background2);
-        parlourCollection.add("drawable://" + R.drawable.background3);
-        parlourCollection.add("drawable://" + R.drawable.background4);
-        parlourCollection.add("drawable://" + R.drawable.background5);
-        parlourCollection.add("drawable://" + R.drawable.background6);
-        parlourCollection.add("drawable://" + R.drawable.background7);
+        parlourCollection.add("drawable://" + R.drawable.img_01);
+        parlourCollection.add("drawable://" + R.drawable.img_02);
+        parlourCollection.add("drawable://" + R.drawable.img_01);
+        parlourCollection.add("drawable://" + R.drawable.img_02);
+        parlourCollection.add("drawable://" + R.drawable.img_01);
+        parlourCollection.add("drawable://" + R.drawable.img_02);
 
         rvNearestParlours.BindRecyclerView(new NearestParlourBinder(getDockActivity(), prefHelper), parlourCollection,
                 new LinearLayoutManager(getDockActivity(), LinearLayoutManager.HORIZONTAL, false)
@@ -102,10 +102,10 @@ public class HomeFragment extends BaseFragment {
         imagesCollection = new ArrayList<>();
         imagesCollection.add("drawable://" + R.drawable.background2);
         imagesCollection.add("drawable://" + R.drawable.background3);
-        imagesCollection.add("drawable://" + R.drawable.background4);
+        imagesCollection.add("drawable://" + R.drawable.background1);
         imagesCollection.add("drawable://" + R.drawable.background5);
         imagesCollection.add("drawable://" + R.drawable.background6);
-        imagesCollection.add("drawable://" + R.drawable.background7);
+        imagesCollection.add("drawable://" + R.drawable.background3);
 
         setPagerSetting();
         customPageAdapter = new CustomPageAdapter(getMainActivity(), imagesCollection);

@@ -16,15 +16,15 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/image"/>
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/x60"
+            android:src="@drawable/placeholder_thumb"/>
 
         <com.app.salonbeaute.ui.views.AnyTextView
             android:id="@+id/full_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Christy T Sessions"
+            android:text="Name"
             android:layout_marginStart="@dimen/x10"
             android:layout_marginTop="@dimen/x5"
             android:textColor="@color/white"

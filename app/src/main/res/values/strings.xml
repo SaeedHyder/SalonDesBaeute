@@ -134,6 +134,7 @@
     <string name="enter_name">Enter your Name</string>
     <string name="terms_and_condition">Terms And Conditions</string>
     <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
     <string name="samePassword">New password should be changed from previous password</string>
     <string name="conform_password_error">confirm password does not match</string>
     <string name="enter_confirm_password">Confirm Password Field cannot be Empty</string>
@@ -147,5 +148,19 @@
     <string name="are_you_sure_you_want_to_logout">Are you sure you want to signout?</string>
     <string name="logout">Logout</string>
     <string name="signout">Sign Out</string>
+    <string name="skip">SKIP</string>
+    <string name="next">NEXT</string>
+    <string name="discover">Discover</string>
+    <string name="view_map">View Map</string>
+    <string name="email">Email</string>
+    <string name="comment">Comment</string>
+    <string name="enter_name_1">Enter Name</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="enter_comment">Enter Comment</string>
+    <string name="contact_no">Contact No</string>
+    <string name="address">Address</string>
+    <string name="my_bookings">My Bookings</string>
+    <string name="up_coming">Up Coming</string>
+    <string name="previous">Previous</string>
 
 </resources>
