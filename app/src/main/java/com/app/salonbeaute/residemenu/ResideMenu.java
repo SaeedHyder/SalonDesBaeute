@@ -31,7 +31,6 @@ import android.widget.LinearLayout;
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.activities.DockActivity;
 import com.app.salonbeaute.global.SideMenuDirection;
-import com.nineoldandroids.view.ViewHelper;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -508,10 +507,7 @@ public class ResideMenu extends FrameLayout {
                 pivotX = screenWidth * -0.5f;
             }
 
-            ViewHelper.setPivotX(viewActivity, pivotX);
-            ViewHelper.setPivotY(viewActivity, pivotY);
-            ViewHelper.setPivotX(imageViewShadow, pivotX);
-            ViewHelper.setPivotY(imageViewShadow, pivotY);
+
             scaleDirection = direction;
         } catch (Exception e) {
             e.printStackTrace();

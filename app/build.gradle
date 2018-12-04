@@ -65,5 +65,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation('com.andreabaccega:android-form-edittext:1.2.1@aar') { exclude module: 'design' }
     implementation project(':commons-lang3-3.1')
-    implementation project(':nineoldandroids-library-2.4.0')
+    implementation project(':library')
 }

@@ -17,6 +17,7 @@ import com.app.salonbeaute.R;
 import com.app.salonbeaute.fragments.HomeFragment;
 import com.app.salonbeaute.fragments.LoginFragment;
 import com.app.salonbeaute.fragments.NotificationsFragment;
+import com.app.salonbeaute.fragments.ParlourDetailFragement;
 import com.app.salonbeaute.fragments.SideMenuFragment;
 import com.app.salonbeaute.fragments.TutorialFragment;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
@@ -182,7 +183,8 @@ public class MainActivity extends DockActivity implements OnClickListener {
         if (prefHelper.isLogin()) {
             replaceDockableFragment(HomeFragment.newInstance(), "HomeFragment");
         } else {
-            replaceDockableFragment(TutorialFragment.newInstance(), "TutorialFragment");
+            replaceDockableFragment(ParlourDetailFragement.newInstance(), "TutorialFragment");
+//            replaceDockableFragment(TutorialFragment.newInstance(), "TutorialFragment");
         }
     }
 
