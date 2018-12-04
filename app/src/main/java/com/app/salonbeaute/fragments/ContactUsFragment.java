@@ -3,6 +3,7 @@ package com.app.salonbeaute.fragments;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Patterns;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,16 +12,22 @@ import android.widget.Button;
 
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
+import com.app.salonbeaute.global.AppConstants;
 import com.app.salonbeaute.helpers.UIHelper;
 import com.app.salonbeaute.ui.views.AnyEditTextView;
 import com.app.salonbeaute.ui.views.TitleBar;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class ContactUsFragment extends BaseFragment {
+public class ContactUsFragment extends BaseFragment implements OnMapReadyCallback {
     @BindView(R.id.ViewMapButton)
     Button ViewMapButton;
     @BindView(R.id.card_view)
@@ -34,6 +41,10 @@ public class ContactUsFragment extends BaseFragment {
     Unbinder unbinder;
     @BindView(R.id.submitBtn)
     Button submitBtn;
+
+    private GoogleMap mMap;
+    private View viewParent;
+    private SupportMapFragment mapFragment;
 
     public static ContactUsFragment newInstance() {
         Bundle args = new Bundle();
@@ -53,9 +64,19 @@ public class ContactUsFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_contact_us, container, false);
-        unbinder = ButterKnife.bind(this, view);
-        return view;
+        if (viewParent != null) {
+            ViewGroup parent = (ViewGroup) viewParent.getParent();
+            if (parent != null)
+                parent.removeView(viewParent);
+        }
+        try {
+            viewParent = inflater.inflate(R.layout.fragment_contact_us, container, false);
+
+        } catch (InflateException e) {
+            e.printStackTrace();
+        }
+        unbinder = ButterKnife.bind(this, viewParent);
+        return viewParent;
     }
 
     @Override
@@ -63,8 +84,26 @@ public class ContactUsFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+        if (mapFragment == null) {
+            initMap();
+        }
         listner();
     }
+
+    private void initMap() {
+        mapFragment = (SupportMapFragment) getChildFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap)
+    {
+        mMap = googleMap;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(25.2048,55.2708), AppConstants.zoomIn));
+        mMap.getUiSettings().setAllGesturesEnabled(false);
+    }
+
 
     private void listner() {
         edtComment.setOnTouchListener(new View.OnTouchListener() {

@@ -41,7 +41,7 @@
         android:paddingBottom="@dimen/x10"
         android:paddingStart="@dimen/x5"
         android:paddingEnd="@dimen/x5"
-        android:src="@drawable/search_icon"
+        android:src="@drawable/notification_icon"
         android:visibility="visible"/>
 
     <ImageView
@@ -55,16 +55,16 @@
         android:paddingBottom="@dimen/x10"
         android:paddingStart="@dimen/x5"
         android:paddingEnd="@dimen/x5"
-        android:src="@drawable/notification_icon"
+        android:src="@drawable/search_icon"
         android:visibility="visible"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnRight2"
-        android:layout_alignEnd="@+id/btnRight2"
-        android:layout_alignStart="@+id/btnRight2"
-        android:layout_alignTop="@+id/btnRight2">
+        android:layout_alignBottom="@+id/btnRight"
+        android:layout_alignEnd="@+id/btnRight"
+        android:layout_alignStart="@+id/btnRight"
+        android:layout_alignTop="@+id/btnRight">
 
         <com.app.salonbeaute.ui.views.AnyTextView
             android:id="@+id/txtBadge"

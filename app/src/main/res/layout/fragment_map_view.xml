@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray_color"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x40"
+        app:cardElevation="@dimen/x5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.app.salonbeaute.ui.views.AnyEditTextView
+                android:id="@+id/edtSearchBox"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:background="@color/transparent"
+                android:gravity="center_vertical"
+                android:hint="Search"
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/x10"
+                android:singleLine="true"
+                android:textColor="@color/app_text_color"
+                android:textSize="@dimen/x14"
+                app:typeface="@string/font_normal" />
+
+            <View
+                android:layout_width="@dimen/x1"
+                android:layout_height="match_parent"
+                android:background="@color/view_line_color" />
+
+            <ImageView
+                android:id="@+id/btn_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x15"
+                android:src="@drawable/filter_icon" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <com.app.salonbeaute.ui.views.CustomRecyclerView
+            android:id="@+id/rv_parlours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BF000000"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

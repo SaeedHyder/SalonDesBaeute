@@ -72,7 +72,9 @@ public class MyBookingsFragment extends BaseFragment implements RecyclerClickLis
             tabLayout.removeAllTabs();
             tabLayout.addTab(tabLayout.newTab().setText(getResString(R.string.up_coming)));
             tabLayout.addTab(tabLayout.newTab().setText(getResString(R.string.previous)));
-            tabLayout.getTabAt(0).select();
+            TabLayout.Tab tab = tabLayout.getTabAt(0);
+            tab.select();
+
             setData();
 
             tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

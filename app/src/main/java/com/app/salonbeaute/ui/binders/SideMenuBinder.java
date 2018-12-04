@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.activities.DockActivity;
@@ -43,7 +44,7 @@ public class SideMenuBinder extends RecyclerViewBinder<SideMenuEnt> {
 
         final ViewHolder holder = (ViewHolder) viewHolder;
         if (position == 0) {
-            holder.llItem.setBackground(dockActivity.getResources().getDrawable(R.drawable.active_bg));
+            holder.llItem.setBackground(dockActivity.getResources().getDrawable(R.drawable.rounded_red_button));
         } else {
             holder.llItem.setBackground(dockActivity.getResources().getDrawable(R.color.transparent));
         }
@@ -51,7 +52,7 @@ public class SideMenuBinder extends RecyclerViewBinder<SideMenuEnt> {
         holder.txtItemName.setText(entity.getTitle());
         holder.icon.setImageResource(entity.getImage());
 
-        holder.llItem.setOnClickListener(new View.OnClickListener() {
+        holder.llMainFrame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickListner.onClick(entity, position);
@@ -69,6 +70,9 @@ public class SideMenuBinder extends RecyclerViewBinder<SideMenuEnt> {
         AnyTextView txtItemName;
         @BindView(R.id.ll_item)
         LinearLayout llItem;
+        @BindView(R.id.ll_mainFrame)
+        RelativeLayout llMainFrame;
+
 
         ViewHolder(View view) {
             super(view);

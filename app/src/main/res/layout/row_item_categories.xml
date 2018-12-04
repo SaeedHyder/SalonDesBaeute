@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x40"
+        app:cardElevation="@dimen/x5"
+        android:layout_margin="0.5dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:id="@+id/txt_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/x20"
+                android:paddingEnd="@dimen/x20"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Hair"
+                android:textColor="@color/app_red_dark"
+                android:textSize="@dimen/x14"
+                app:typeface="@string/font_normal" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/x2"
+                android:layout_alignParentBottom="true"
+                android:background="@color/app_red_dark" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

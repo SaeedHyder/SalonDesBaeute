@@ -8,7 +8,7 @@
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
 
-    <string name="api_key">AIzaSyCDylplefNyWlLDoBL_n2VFjwlMWvq3sBg  </string>
+    <string name="api_key">AIzaSyCGD2SVEAbUW0l6uLPhZv86fKCrZvRf2Dk</string>
     <string name="app_name">SalonDesBeaute</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -87,6 +87,9 @@
         etting industry. Lorem Ipsum has been the industrys standard dummy text ever sinc
         e the 1500s.</string>
 
+    <string name="lorem_small_2">Lorem Ipsum is simply dummy text of the printing and types
+        etting industry. </string>
+
     <string name="default_hint_text">Where are you going?</string>
 
     <string name="connection_lost">No Internet Found</string>
@@ -162,5 +165,36 @@
     <string name="my_bookings">My Bookings</string>
     <string name="up_coming">Up Coming</string>
     <string name="previous">Previous</string>
+    <string name="change_password_1">Change Password</string>
+    <string name="reviews">Reviews</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="notifications_amp_reminders">Notifications &amp; Reminders</string>
+    <string name="reservation_date">Reservation Date</string>
+    <string name="placed_on">Placed On</string>
+    <string name="promotions">Promotions</string>
+    <string name="near_by">Near By</string>
+    <string name="map_view">Map View</string>
+    <string name="list_view">List View</string>
+    <string name="dummy_address">17-C 24th Commercial St- (021) 258551363 \n Opens at 8:00am Closes at 11:00pm</string>
+    <string name="my_profile">My Profile</string>
+    <string name="gender">Gender</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="edit_my_profile">Edit My Profile</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="enter_your_address">Enter Your Address</string>
+    <string name="enter_shipping_address">Enter Your Shipping Address</string>
+    <string name="province">Province</string>
+    <string name="select_city">Select city to proceed.</string>
+    <string name="select_profile_pic">Select profile picture to proceed.</string>
+    <string name="select_province">Select province to proceed.</string>
+    <string name="select_gender">Select gender to proceed.</string>
+    <string name="upload_photo">Upload Photo</string>
+    <string name="how_do_you_want_to_set_your_photo">How do you want to set your photo?</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="internet_issue">Internet Issue,Upload Image Again</string>
+    <string name="filter">Filter</string>
 
 </resources>

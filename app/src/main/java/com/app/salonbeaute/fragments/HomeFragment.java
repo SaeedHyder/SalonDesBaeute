@@ -100,9 +100,9 @@ public class HomeFragment extends BaseFragment {
     private void setViewPager() {
 
         imagesCollection = new ArrayList<>();
-        imagesCollection.add("drawable://" + R.drawable.background2);
-        imagesCollection.add("drawable://" + R.drawable.background3);
         imagesCollection.add("drawable://" + R.drawable.background1);
+        imagesCollection.add("drawable://" + R.drawable.background3);
+        imagesCollection.add("drawable://" + R.drawable.background2);
         imagesCollection.add("drawable://" + R.drawable.background5);
         imagesCollection.add("drawable://" + R.drawable.background6);
         imagesCollection.add("drawable://" + R.drawable.background3);
@@ -110,7 +110,7 @@ public class HomeFragment extends BaseFragment {
         setPagerSetting();
         customPageAdapter = new CustomPageAdapter(getMainActivity(), imagesCollection);
         viewPager.setAdapter(customPageAdapter);
-       // indicator.setViewPager(viewPager);
+        indicator.setViewPager(viewPager);
     }
 
     private void setPagerSetting() {

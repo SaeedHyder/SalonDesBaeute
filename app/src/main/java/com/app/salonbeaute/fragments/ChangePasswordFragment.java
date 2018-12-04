@@ -43,9 +43,19 @@ public class ChangePasswordFragment extends BaseFragment implements CompoundButt
     @BindView(R.id.ll_current_password)
     LinearLayout llCurrentPassword;
 
+    private static boolean isChangePassword = false;
+
     public static ChangePasswordFragment newInstance() {
         Bundle args = new Bundle();
+        isChangePassword = false;
+        ChangePasswordFragment fragment = new ChangePasswordFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
+    public static ChangePasswordFragment newInstance(boolean isChangePass) {
+        Bundle args = new Bundle();
+        isChangePassword = isChangePass;
         ChangePasswordFragment fragment = new ChangePasswordFragment();
         fragment.setArguments(args);
         return fragment;
@@ -73,6 +83,10 @@ public class ChangePasswordFragment extends BaseFragment implements CompoundButt
         checkboxShowNewPassword.setOnCheckedChangeListener(this);
         checkboxShowConfirmPassword.setOnCheckedChangeListener(this);
 
+        if (isChangePassword) {
+            llCurrentPassword.setVisibility(View.VISIBLE);
+        }
+
     }
 
     @Override
@@ -97,17 +111,23 @@ public class ChangePasswordFragment extends BaseFragment implements CompoundButt
         switch (view.getId()) {
 
             case R.id.changePassBtn:
-                if (isvalidateForgotPassword()) {
-                    DialogHelper dialoge = new DialogHelper(getDockActivity());
-                    dialoge.forgotPassDialoge(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            dialoge.hideDialog();
-                            getDockActivity().popBackStackTillEntry(0);
-                            getDockActivity().replaceDockableFragment(LoginFragment.newInstance(), "LoginFragment");
-                        }
-                    },getResString(R.string.thank_you), getResString(R.string.number_verification),R.drawable.check_icon1);
-                    dialoge.showDialog();
+                if (isChangePassword) {
+                    if (isvalidateChangePassword()) {
+                        getDockActivity().popFragment();
+                    }
+                } else {
+                    if (isvalidateForgotPassword()) {
+                        DialogHelper dialoge = new DialogHelper(getDockActivity());
+                        dialoge.forgotPassDialoge(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialoge.hideDialog();
+                                getDockActivity().popBackStackTillEntry(0);
+                                getDockActivity().replaceDockableFragment(LoginFragment.newInstance(), "LoginFragment");
+                            }
+                        }, getResString(R.string.thank_you), getResString(R.string.number_verification), R.drawable.check_icon1);
+                        dialoge.showDialog();
+                    }
                 }
                 break;
 
@@ -164,7 +184,7 @@ public class ChangePasswordFragment extends BaseFragment implements CompoundButt
         if (txtNewPassword.getText() == null || (txtNewPassword.getText().toString().isEmpty())) {
             txtNewPassword.setError(getString(R.string.enter_password));
             return false;
-        }  else if (txtNewPassword.getText().toString().length() < 6) {
+        } else if (txtNewPassword.getText().toString().length() < 6) {
             txtNewPassword.setError(getString(R.string.passwordLength));
             return false;
         } else if (txtVerifyPassword.getText() == null || (txtVerifyPassword.getText().toString().isEmpty())) {

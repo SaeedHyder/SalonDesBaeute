@@ -13,8 +13,10 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.view.View;
 import android.widget.ImageView;
 
+import com.app.salonbeaute.activities.MainActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class CameraHelper {
@@ -298,6 +300,45 @@ public class CameraHelper {
 		options.inSampleSize = 2;
 		return options;
 	}
+
+	public static void uploadPhotoDialog(final MainActivity activity) {
+
+		DialogHelper dialoge=new DialogHelper(activity);
+		dialoge.cameraPicker(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+                activity.takePicture();
+                dialoge.hideDialog();
+
+			}
+		}, new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+                activity.chooseImage();
+                dialoge.hideDialog();
+			}
+		});
+		dialoge.showDialog();
+		/*AlertDialog.Builder myAlertDialog = new AlertDialog.Builder(activity);
+		myAlertDialog.setTitle("Upload Photo");
+		myAlertDialog.setMessage("How do you want to set your photo?");
+
+		myAlertDialog.setPositiveButton("Gallery",
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface arg0, int arg1) {
+						activity.chooseImage();
+					}
+				});
+
+		myAlertDialog.setNegativeButton("Camera",
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface arg0, int arg1) {
+						activity.takePicture();
+					}
+				});
+		myAlertDialog.show();*/
+	}
+
 
 	public static void uploadPhotoDialog(final Fragment fragment,
 			Activity activity) {

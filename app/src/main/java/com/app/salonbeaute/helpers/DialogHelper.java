@@ -68,6 +68,17 @@ public class DialogHelper {
         return this.dialog;
     }
 
+    public Dialog cameraPicker( View.OnClickListener cameraListner, View.OnClickListener galleryListner) {
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        this.dialog.setContentView(R.layout.dialoge_camera_options);
+        Button btnCamera = (Button) dialog.findViewById(R.id.btn_camera);
+        btnCamera.setOnClickListener(cameraListner);
+        Button btnGallery = (Button) dialog.findViewById(R.id.btn_gallery);
+        btnGallery.setOnClickListener(galleryListner);
+        return this.dialog;
+    }
+
 
     public void showDialog() {
 

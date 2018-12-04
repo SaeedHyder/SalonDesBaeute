@@ -62,7 +62,7 @@ public class CustomRecyclerView<T> extends RecyclerView {
         }
     }
 
-    private void notifyDataSetChanged() {
+    public void notifyDataSetChanged() {
         if (mRecyclerViewAdapter != null) {
             mRecyclerViewAdapter.notifyDataSetChanged();
         }
@@ -96,19 +96,24 @@ public class CustomRecyclerView<T> extends RecyclerView {
 
     }
 
-    private void notifyItemChanged(int i) {
+    public void notifyItemChanged(int i) {
         if (mRecyclerViewAdapter != null)
             mRecyclerViewAdapter.notifyItemChanged(i);
     }
 
-    private void notifyItemRemoved(int i) {
+    public void notifyItemRemoved(int i) {
         if (mRecyclerViewAdapter != null)
             mRecyclerViewAdapter.notifyItemRemoved(i);
     }
 
-    private void notifyItemInserted(int i) {
+    public void notifyItemInserted(int i) {
         if (mRecyclerViewAdapter != null)
             mRecyclerViewAdapter.notifyItemInserted(i);
+    }
+
+    public void notifyItemRangeChanged(int position,int count){
+        if (mRecyclerViewAdapter != null)
+            mRecyclerViewAdapter.notifyItemRangeChanged(position,count);
     }
 
     public RecyclerViewAdapter getAdapter() {

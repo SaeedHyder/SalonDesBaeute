@@ -57,5 +57,9 @@
     <color name="tab_layout_color">#46142D</color>
     <color name="text_color_gray">#67637A</color>
     <color name="app_text_green">#4BBF4F</color>
+    <color name="blue_view">#4A3B61</color>
+    <color name="background_gray_color">#EBEEF5</color>
+    <color name="light_gray">#F7F7F7</color>
+
 
 </resources>

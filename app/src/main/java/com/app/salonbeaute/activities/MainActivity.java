@@ -1,5 +1,6 @@
 package com.app.salonbeaute.activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.fragments.HomeFragment;
@@ -20,12 +22,19 @@ import com.app.salonbeaute.fragments.NotificationsFragment;
 import com.app.salonbeaute.fragments.SideMenuFragment;
 import com.app.salonbeaute.fragments.TutorialFragment;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
+import com.app.salonbeaute.global.AppConstants;
 import com.app.salonbeaute.global.SideMenuChooser;
 import com.app.salonbeaute.global.SideMenuDirection;
 import com.app.salonbeaute.helpers.ScreenHelper;
 import com.app.salonbeaute.helpers.UIHelper;
+import com.app.salonbeaute.interfaces.ImageSetter;
 import com.app.salonbeaute.residemenu.ResideMenu;
 import com.app.salonbeaute.ui.views.TitleBar;
+import com.kbeanie.imagechooser.api.ChooserType;
+import com.kbeanie.imagechooser.api.ChosenImage;
+import com.kbeanie.imagechooser.api.ChosenImages;
+import com.kbeanie.imagechooser.api.ImageChooserListener;
+import com.kbeanie.imagechooser.api.ImageChooserManager;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
@@ -34,7 +43,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class MainActivity extends DockActivity implements OnClickListener {
+public class MainActivity extends DockActivity implements OnClickListener, ImageChooserListener {
+    private final static String TAG = "MainActivity";
     public TitleBar titleBar;
     @BindView(R.id.sideMneuFragmentContainer)
     public FrameLayout sideMneuFragmentContainer;
@@ -48,6 +58,14 @@ public class MainActivity extends DockActivity implements OnClickListener {
     private boolean loading;
 
     private ResideMenu resideMenu;
+    private ImageChooserManager imageChooserManager;
+    private int chooserType;
+    private String filePath;
+    private String originalFilePath;
+    private ImageSetter imageSetter;
+    private String thumbnailFilePath;
+    private String thumbnailSmallFilePath;
+    private boolean isActivityResultOver = false;
 
     private float lastTranslate = 0.0f;
 
@@ -113,8 +131,8 @@ public class MainActivity extends DockActivity implements OnClickListener {
             }
         });
 
-      //  if (savedInstanceState == null)
-            initFragment();
+        //  if (savedInstanceState == null)
+        initFragment();
 
     }
 
@@ -284,5 +302,123 @@ public class MainActivity extends DockActivity implements OnClickListener {
                 .bitmapConfig(Bitmap.Config.RGB_565).build();
 
     }
+
+    public void setImageSetter(ImageSetter imageSetter) {
+        this.imageSetter = imageSetter;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK
+                && (requestCode == ChooserType.REQUEST_PICK_PICTURE || requestCode == ChooserType.REQUEST_CAPTURE_PICTURE)) {
+            if (imageChooserManager == null) {
+                reinitializeImageChooser();
+            }
+            imageChooserManager.submit(requestCode, data);
+        }
+
+    }
+
+    private void reinitializeImageChooser() {
+        imageChooserManager = new ImageChooserManager(this, chooserType, true);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(Intent.EXTRA_ALLOW_MULTIPLE, false);
+        imageChooserManager.setExtras(bundle);
+        imageChooserManager.setImageChooserListener(this);
+        imageChooserManager.reinitialize(filePath);
+    }
+
+    public void chooseImage() {
+        chooserType = ChooserType.REQUEST_PICK_PICTURE;
+        imageChooserManager = new ImageChooserManager(this,
+                ChooserType.REQUEST_PICK_PICTURE, true);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        imageChooserManager.setExtras(bundle);
+        imageChooserManager.setImageChooserListener(this);
+        imageChooserManager.clearOldFiles();
+        try {
+            //pbar.setVisibility(View.VISIBLE);
+            filePath = imageChooserManager.choose();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void takePicture() {
+        chooserType = ChooserType.REQUEST_CAPTURE_PICTURE;
+        imageChooserManager = new ImageChooserManager(this,
+                ChooserType.REQUEST_CAPTURE_PICTURE, true);
+        imageChooserManager.setImageChooserListener(this);
+        try {
+            //pbar.setVisibility(View.VISIBLE);
+            filePath = imageChooserManager.choose();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onImageChosen(final ChosenImage image) {
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                Log.i(TAG, "Chosen Image: O - " + image.getFilePathOriginal());
+                Log.i(TAG, "Chosen Image: T - " + image.getFileThumbnail());
+                Log.i(TAG, "Chosen Image: Ts - " + image.getFileThumbnailSmall());
+                isActivityResultOver = true;
+                originalFilePath = image.getFilePathOriginal();
+                thumbnailFilePath = image.getFileThumbnail();
+                thumbnailSmallFilePath = image.getFileThumbnailSmall();
+                //pbar.setVisibility(View.GONE);
+                if (image != null) {
+                    Log.i(TAG, "Chosen Image: Is not null");
+
+                    // Toast.makeText(getApplication(),thumbnailFilePath,Toast.LENGTH_LONG).show();
+                    imageSetter.setImage(originalFilePath);
+
+                    //loadImage(imageViewThumbnail, image.getFileThumbnail());
+                } else {
+                    Log.i(TAG, "Chosen Image: Is null");
+                }
+
+            }
+        });
+
+    }
+
+    @Override
+    public void onError(final String reason) {
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                Log.i(TAG, "OnError: " + reason);
+                // pbar.setVisibility(View.GONE);
+                Toast.makeText(MainActivity.this, reason,
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    @Override
+    public void onImagesChosen(final ChosenImages images) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Log.i(TAG, "On Images Chosen: " + images.size());
+                onImageChosen(images.getImage(0));
+            }
+        });
+
+    }
+
 
 }

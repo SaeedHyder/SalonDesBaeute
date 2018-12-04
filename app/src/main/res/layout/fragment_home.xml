@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:custom="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -15,7 +15,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/x50">
+            android:layout_height="@dimen/x45">
 
             <ImageView
                 android:id="@+id/btnMenu"
@@ -38,7 +38,7 @@
                 android:text="@string/salon_des_beaute"
                 android:textColor="@color/white"
                 android:textSize="@dimen/x18"
-                app:typeface="OpenSans-Regular.ttf" />
+                app:typeface="@string/font_normal" />
 
             <ImageView
                 android:id="@+id/btnNotificatoin"
@@ -73,18 +73,19 @@
         <com.app.salonbeaute.ui.views.AnyTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/x15"
+            android:layout_marginBottom="@dimen/x10"
             android:layout_marginEnd="@dimen/x25"
             android:layout_marginStart="@dimen/x25"
             android:gravity="center"
             android:text="@string/featured_parlours_services"
             android:textColor="@color/white"
-            android:textSize="@dimen/x20"
+            android:textSize="@dimen/x17"
             app:typeface="@string/font_normal" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="0.6">
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewpager"
@@ -98,15 +99,51 @@
 
             <me.relex.circleindicator.CircleIndicator
                 android:id="@+id/indicator"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/x48"
+                android:layout_width="@dimen/x100"
+                android:layout_height="@dimen/x40"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
                 android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/x5"
+                android:layout_marginEnd="@dimen/x20"
                 custom:ci_drawable="@drawable/red_radius"
-                custom:ci_drawable_unselected="@drawable/black_radius" />
+                custom:ci_drawable_unselected="@drawable/white_radius" />
 
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_marginStart="@dimen/x10"
+                android:layout_marginTop="@dimen/x5"
+                android:gravity="center"
+                android:text="Zoella's Beauty Saloon"
+                android:textColor="@color/app_text_orange"
+                android:textSize="@dimen/x15"
+                app:typeface="@string/font_normal" />
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x3"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_marginStart="@dimen/x10"
+                android:gravity="center"
+                android:text="@string/lorem_small"
+                android:textColor="@color/app_text_color_login"
+                android:textSize="@dimen/x12"
+                app:typeface="@string/font_normal" />
+
+        </LinearLayout>
 
 
     </LinearLayout>
@@ -122,10 +159,10 @@
         <com.app.salonbeaute.ui.views.AnyTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/x3"
+            android:layout_marginStart="@dimen/x10"
             android:gravity="start"
             android:text="@string/top_parlours_near_you"
-            android:layout_marginStart="@dimen/x10"
-            android:layout_marginBottom="@dimen/x3"
             android:textColor="@color/app_text_black"
             android:textSize="@dimen/x16"
             app:typeface="@string/font_normal" />

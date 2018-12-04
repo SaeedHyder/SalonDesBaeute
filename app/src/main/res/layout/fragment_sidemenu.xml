@@ -18,14 +18,14 @@
             android:id="@+id/profileImage"
             android:layout_width="@dimen/x60"
             android:layout_height="@dimen/x60"
-            android:src="@drawable/placeholder_thumb"/>
+            android:src="@drawable/image"/>
 
         <com.app.salonbeaute.ui.views.AnyTextView
             android:id="@+id/full_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
-            android:layout_marginStart="@dimen/x10"
+            android:paddingStart="@dimen/x10"
             android:layout_marginTop="@dimen/x5"
             android:textColor="@color/white"
             android:textSize="@dimen/x15"
@@ -37,7 +37,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/view_profile"
-            android:layout_marginStart="@dimen/x10"
+            android:paddingStart="@dimen/x10"
+            android:paddingBottom="@dimen/x10"
+            android:paddingEnd="@dimen/x10"
             android:textColor="@color/app_red_dark"
             android:textSize="@dimen/x13"
             android:layout_toEndOf="@+id/profileImage"

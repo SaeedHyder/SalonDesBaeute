@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_bar_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x50">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x10"
+                android:padding="@dimen/x13"
+                android:scaleType="fitXY"
+                android:src="@drawable/back"
+                android:visibility="visible" />
+
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/near_by"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x18"
+                app:typeface="OpenSans-Regular.ttf" />
+
+            <ImageView
+                android:id="@+id/btnNotificatoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/x10"
+                android:paddingBottom="@dimen/x10"
+                android:paddingEnd="@dimen/x5"
+                android:paddingStart="@dimen/x5"
+                android:paddingTop="@dimen/x10"
+                android:src="@drawable/notification_icon"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x50"
+            app:tabBackground="@drawable/selector_tab_layout"
+            app:tabIndicator="@color/tab_layout_color"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/app_text_color_login" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

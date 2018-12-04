@@ -13,7 +13,6 @@ import com.app.salonbeaute.entities.SideMenuEnt;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
 import com.app.salonbeaute.global.AppConstants;
 import com.app.salonbeaute.helpers.DialogHelper;
-import com.app.salonbeaute.helpers.UIHelper;
 import com.app.salonbeaute.interfaces.RecyclerClickListner;
 import com.app.salonbeaute.ui.binders.SideMenuBinder;
 import com.app.salonbeaute.ui.views.AnyTextView;
@@ -77,9 +76,11 @@ public class SideMenuFragment extends BaseFragment implements RecyclerClickListn
         collection.add(new SideMenuEnt(AppConstants.Home, R.drawable.home_icon));
         collection.add(new SideMenuEnt(AppConstants.AboutSalonDesBeaute, R.drawable.user_icon));
         collection.add(new SideMenuEnt(AppConstants.ContactUs, R.drawable.contact_icon1));
+        collection.add(new SideMenuEnt(AppConstants.ParlourServices, R.drawable.parlor_services));
         collection.add(new SideMenuEnt(AppConstants.MyBookings, R.drawable.booking_icon));
         collection.add(new SideMenuEnt(AppConstants.Promotions, R.drawable.promotion_icon));
         collection.add(new SideMenuEnt(AppConstants.NearBy, R.drawable.nearby_icon));
+        collection.add(new SideMenuEnt(AppConstants.Reviews, R.drawable.reviews_icon));
         collection.add(new SideMenuEnt(AppConstants.Notifications, R.drawable.notification_icon));
         collection.add(new SideMenuEnt(AppConstants.Settings, R.drawable.setting_icon));
         collection.add(new SideMenuEnt(AppConstants.SignOut, R.drawable.ssignout_icon));
@@ -105,25 +106,31 @@ public class SideMenuFragment extends BaseFragment implements RecyclerClickListn
             getMainActivity().closeDrawer();
 
         } else if (ent.getTitle().equals(AppConstants.AboutSalonDesBeaute)) {
-            getDockActivity().replaceDockableFragment(AboutUsFragment.newInstance(),"AboutUsFragment");
+            getDockActivity().replaceDockableFragment(AboutUsFragment.newInstance(), "AboutUsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.ContactUs)) {
-            getDockActivity().replaceDockableFragment(ContactUsFragment.newInstance(),"ContactUsFragment");
+            getDockActivity().replaceDockableFragment(ContactUsFragment.newInstance(), "ContactUsFragment");
+
+        }else if (ent.getTitle().equals(AppConstants.ParlourServices)) {
+            getDockActivity().replaceDockableFragment(ParlourServicesFragment.newInstance(), "ParlourServicesFragment");
 
         } else if (ent.getTitle().equals(AppConstants.MyBookings)) {
-            getDockActivity().replaceDockableFragment(MyBookingsFragment.newInstance(),"MyBookingsFragment");
+            getDockActivity().replaceDockableFragment(MyBookingsFragment.newInstance(), "MyBookingsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.Promotions)) {
-            UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+            getDockActivity().replaceDockableFragment(PromotionsFragment.newInstance(), "PromotionsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.NearBy)) {
-            UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+            getDockActivity().replaceDockableFragment(NearByFragment.newInstance(), "NearByFragment");
 
-        } else if (ent.getTitle().equals(AppConstants.Notifications)) {
-            getDockActivity().replaceDockableFragment(NotificationsFragment.newInstance(),"NotificationsFragment");
+        } else if (ent.getTitle().equals(AppConstants.Reviews)) {
+            getDockActivity().replaceDockableFragment(ReviewsFragment.newInstance(), "ReviewsFragment");
+
+        }  else if (ent.getTitle().equals(AppConstants.Notifications)) {
+            getDockActivity().replaceDockableFragment(NotificationsFragment.newInstance(), "NotificationsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.Settings)) {
-            UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+            getDockActivity().replaceDockableFragment(SettingFragment.newInstance(), "SettingFragment");
 
         } else if (ent.getTitle().equals(AppConstants.SignOut)) {
             DialogHelper dialoge = new DialogHelper(getDockActivity());
@@ -147,6 +154,6 @@ public class SideMenuFragment extends BaseFragment implements RecyclerClickListn
 
     @OnClick(R.id.view_profile)
     public void onViewClicked() {
-        UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+        getDockActivity().replaceDockableFragment(ProfileFragment.newInstance(), "ProfileFragment");
     }
 }

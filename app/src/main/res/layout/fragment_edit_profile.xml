@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x180"
+        android:background="@drawable/background9"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x50">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x10"
+                android:padding="@dimen/x13"
+                android:scaleType="fitXY"
+                android:src="@drawable/back"
+                android:visibility="visible" />
+
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/edit_my_profile"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x18"
+                app:typeface="@string/font_normal" />
+
+
+            <ImageView
+                android:id="@+id/btnDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/x10"
+                android:paddingBottom="@dimen/x10"
+                android:paddingEnd="@dimen/x5"
+                android:paddingStart="@dimen/x5"
+                android:paddingTop="@dimen/x10"
+                android:src="@drawable/check"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginBottom="@dimen/x15"
+            android:layout_marginEnd="@dimen/x15"
+            android:layout_marginStart="@dimen/x20"
+            android:layout_marginTop="@dimen/x10"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/btnUploadImage"
+                android:layout_width="@dimen/x100"
+                android:layout_height="@dimen/x100"
+                android:background="@drawable/thumbnail_base1"
+
+                >
+
+                <ImageView
+                    android:id="@+id/iv_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/camera" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_camera"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x3"
+                    android:text="Upload Image"
+                    android:textColor="@color/app_text_color"
+                    android:textSize="@dimen/x10"
+                    app:typeface="@string/font_normal" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:layout_centerInParent="true" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btnUploadImage"
+                android:layout_alignTop="@+id/btnUploadImage"
+                android:layout_marginStart="@dimen/x15"
+                android:layout_toEndOf="@+id/btnUploadImage"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x16"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edt_name"
+                    android:layout_marginTop="@dimen/x3"
+                    android:text="Pakistan"
+                    android:textColor="@color/app_text_color_login"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/x5"
+            android:layout_marginEnd="@dimen/x20"
+            android:layout_marginStart="@dimen/x20"
+            android:layout_marginTop="@dimen/x10"
+            android:background="#FAF9FE"
+            android:orientation="vertical">
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:text="@string/name"
+                android:textColor="@color/app_red_dark"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+            <com.app.salonbeaute.ui.views.AnyEditTextView
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:background="@color/transparent"
+                android:hint="Enter Your Full Name"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/x15"
+                app:typeface="@string/font_normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:layout_marginBottom="@dimen/x10"
+                android:background="@color/view_line_color" />
+
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:text="@string/email"
+                android:textColor="@color/app_red_dark"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+            <com.app.salonbeaute.ui.views.AnyEditTextView
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:background="@color/transparent"
+                android:hint="@string/enter_email_address"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/x15"
+                app:typeface="@string/font_normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:layout_marginBottom="@dimen/x10"
+                android:background="@color/view_line_color" />
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:text="@string/mobile_number"
+                android:textColor="@color/app_red_dark"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal">
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/Countrypicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="@dimen/x3"
+                    app:ccpDialog_textColor="@color/dark_grey"
+                    app:ccp_autoDetectCountry="false"
+                    app:ccp_contentColor="@color/dark_grey"
+                    app:ccp_defaultNameCode="PK"
+                    app:ccp_hintExampleNumber="true"
+                    app:ccp_hintExampleNumberType="MOBILE"
+                    app:ccp_showArrow="true"
+                    app:ccp_showFlag="false"
+                    app:ccp_showNameCode="false"
+                    app:ccp_textGravity="LEFT"
+                    app:ccp_textSize="@dimen/x14" />
+
+                <com.app.salonbeaute.ui.views.AnyEditTextView
+                    android:id="@+id/edtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:hint="234-456-789"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="16"
+                    android:maxLines="1"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/x14"
+                    app:typeface="@string/font_normal" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:layout_marginBottom="@dimen/x10"
+                android:background="@color/view_line_color" />
+
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:text="@string/address"
+                android:textColor="@color/app_red_dark"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.app.salonbeaute.ui.views.AnyEditTextView
+                    android:id="@+id/edt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x60"
+                    android:layout_marginBottom="@dimen/x3"
+                    android:background="@color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/enter_your_address"
+                    android:inputType="textMultiLine"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/x15"
+                    app:typeface="@string/font_normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:layout_marginBottom="@dimen/x10"
+                    android:background="@color/view_line_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x10"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="@string/city"
+                        android:textColor="@color/app_red_dark"
+                        android:textSize="@dimen/x13"
+                        app:typeface="@string/font_normal" />
+
+                    <Spinner
+                        android:id="@+id/spn_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x35" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x1"
+                        android:background="@color/view_line_color" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/x5"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="@string/province"
+                        android:textColor="@color/app_red_dark"
+                        android:textSize="@dimen/x13"
+                        app:typeface="@string/font_normal" />
+
+                    <Spinner
+                        android:id="@+id/spn_province"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x35" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x1"
+                        android:background="@color/view_line_color" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:text="@string/gender"
+                android:textColor="@color/app_red_dark"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+            <Spinner
+                android:id="@+id/spn_gender"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x35" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:layout_marginBottom="@dimen/x10"
+                android:background="@color/view_line_color" />
+
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:text="@string/shipping_address"
+                android:textColor="@color/app_red_dark"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.app.salonbeaute.ui.views.AnyEditTextView
+                    android:id="@+id/edt_shippaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x60"
+                    android:layout_marginBottom="@dimen/x3"
+                    android:background="@color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/enter_shipping_address"
+                    android:inputType="textMultiLine"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="@dimen/x15"
+                    app:typeface="@string/font_normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:layout_marginBottom="@dimen/x15"
+                    android:background="@color/view_line_color" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

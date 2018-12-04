@@ -18,6 +18,7 @@ public class AppConstants {
     public static String DateFormat_HM = "HH:mm";
     public static String DateFormat_YMDHMS = "yyyy-MM-dd HH:mm:ss";
 
+    public static int zoomIn = 12;
     //SideMenu
     public static String Home = "Home";
     public static String AboutSalonDesBeaute = "About Salon Des Beaute";
@@ -25,6 +26,8 @@ public class AppConstants {
     public static String MyBookings = "My Bookings";
     public static String Promotions = "Promotions";
     public static String NearBy = "Near By";
+    public static String Reviews = "Reviews";
+    public static String ParlourServices = "Parlour Services";
     public static String Notifications = "Notifications";
     public static String Settings = "Settings";
     public static String SignOut = "Sign Out";

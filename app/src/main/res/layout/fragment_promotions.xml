@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background9"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x50">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x10"
+                android:padding="@dimen/x13"
+                android:scaleType="fitXY"
+                android:src="@drawable/back"
+                android:visibility="visible" />
+
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/promotions"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x18"
+                app:typeface="@string/font_normal" />
+
+
+            <ImageView
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/x10"
+                android:paddingBottom="@dimen/x10"
+                android:paddingEnd="@dimen/x5"
+                android:paddingStart="@dimen/x5"
+                android:paddingTop="@dimen/x10"
+                android:src="@drawable/search_icon"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x200">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpagerPromotions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:clipToPadding="false" />
+
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/indicator"
+                android:layout_width="@dimen/x100"
+                android:layout_height="@dimen/x48"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="@dimen/x10"
+                android:layout_marginEnd="@dimen/x15"
+                custom:ci_drawable="@drawable/red_radius"
+                custom:ci_drawable_unselected="@drawable/white_radius" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <com.app.salonbeaute.ui.views.CustomRecyclerView
+        android:id="@+id/rv_promotionsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

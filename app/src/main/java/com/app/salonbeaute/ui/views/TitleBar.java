@@ -89,9 +89,9 @@ public class TitleBar extends RelativeLayout {
 	}
 
 	public void showSearchButton(OnClickListener listener) {
-		btnRight.setVisibility(View.VISIBLE);
-		btnRight.setOnClickListener(listener);
-		btnRight.setImageResource(R.drawable.search_icon);
+		btnRight2.setVisibility(View.VISIBLE);
+		btnRight2.setOnClickListener(listener);
+		btnRight2.setImageResource(R.drawable.search_icon);
 	}
 
 	public void setSubHeading(String heading) {
@@ -101,10 +101,10 @@ public class TitleBar extends RelativeLayout {
 	}
 
 	public void showNotificationButton(int Count) {
-		btnRight.setVisibility(View.INVISIBLE);
-		btnRight2.setVisibility(View.VISIBLE);
-		btnRight2.setOnClickListener(notificationButtonListener);
-		btnRight2.setImageResource(R.drawable.notification_icon);
+
+		btnRight.setVisibility(View.VISIBLE);
+		btnRight.setOnClickListener(notificationButtonListener);
+		btnRight.setImageResource(R.drawable.notification_icon);
 		if (Count > 0) {
 			txtBadge.setVisibility(View.VISIBLE);
 			txtBadge.setText(Count + "");
