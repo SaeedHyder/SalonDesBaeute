@@ -15,13 +15,13 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
 
 public class PromotionAdapter extends PagerAdapter {
-    MainActivity context;
+    Context context;
     ArrayList<String> images;
     LayoutInflater layoutInflater;
     ImageLoader imageLoader;
 
 
-    public PromotionAdapter(MainActivity context, ArrayList<String> images) {
+    public PromotionAdapter(Context context, ArrayList<String> images) {
         this.context = context;
         this.images = images;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

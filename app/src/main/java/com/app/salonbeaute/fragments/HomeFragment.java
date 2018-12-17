@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
 import com.app.salonbeaute.helpers.UIHelper;
+import com.app.salonbeaute.interfaces.RecyclerClickListner;
 import com.app.salonbeaute.ui.adapters.CustomPageAdapter;
 import com.app.salonbeaute.ui.binders.NearestParlourBinder;
 import com.app.salonbeaute.ui.views.CustomRecyclerView;
@@ -29,7 +30,7 @@ import butterknife.Unbinder;
 import me.relex.circleindicator.CircleIndicator;
 
 
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment implements RecyclerClickListner {
 
 
     @BindView(R.id.btnMenu)
@@ -92,7 +93,7 @@ public class HomeFragment extends BaseFragment {
         parlourCollection.add("drawable://" + R.drawable.img_01);
         parlourCollection.add("drawable://" + R.drawable.img_02);
 
-        rvNearestParlours.BindRecyclerView(new NearestParlourBinder(getDockActivity(), prefHelper), parlourCollection,
+        rvNearestParlours.BindRecyclerView(new NearestParlourBinder(getDockActivity(), prefHelper,this), parlourCollection,
                 new LinearLayoutManager(getDockActivity(), LinearLayoutManager.HORIZONTAL, false)
                 , new DefaultItemAnimator());
     }
@@ -105,7 +106,7 @@ public class HomeFragment extends BaseFragment {
         imagesCollection.add("drawable://" + R.drawable.background2);
         imagesCollection.add("drawable://" + R.drawable.background5);
         imagesCollection.add("drawable://" + R.drawable.background6);
-        imagesCollection.add("drawable://" + R.drawable.background3);
+        imagesCollection.add("drawable://" + R.drawable.background7);
 
         setPagerSetting();
         customPageAdapter = new CustomPageAdapter(getMainActivity(), imagesCollection);
@@ -164,11 +165,15 @@ public class HomeFragment extends BaseFragment {
                 getDockActivity().replaceDockableFragment(NotificationsFragment.newInstance(), "NotificationsFragment", true);
                 break;
             case R.id.btnSearch:
-                UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+                getDockActivity().replaceDockableFragment(SearchFragment.newInstance(), "SearchFragment", true);
                 break;
         }
     }
 
 
+    @Override
+    public void onClick(Object entity, int position) {
+        getDockActivity().replaceDockableFragment(ParlourDetailFragement.newInstance(),"ParlourDetailFragement");
+    }
 }
 

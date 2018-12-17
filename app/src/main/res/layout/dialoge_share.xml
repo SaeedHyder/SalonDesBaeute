@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/x3"
+    android:background="@color/white"
+    app:cardCornerRadius="@dimen/x5"
+    app:cardElevation="@dimen/x5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/x10">
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/containerImages"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="@dimen/x5"
+                android:layout_height="@dimen/x180"
+                app:cardCornerRadius="@dimen/x10"
+                app:cardElevation="@dimen/x5">
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x200">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/background2" />
+
+
+                    <ImageView
+                        android:id="@+id/cross"
+                        android:layout_width="@dimen/x30"
+                        android:layout_height="@dimen/x30"
+                        android:padding="@dimen/x10"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/x10"
+                        android:src="@drawable/cross_1" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/containerImages"
+                android:layout_marginTop="@dimen/x3"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/homeshield_icon_gray" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtServiceType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="@string/home_services"
+                    android:textColor="@color/text_color_gray"
+                    app:typeface="@string/font_normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/containerImages"
+                android:layout_marginTop="@dimen/x3"
+                android:orientation="horizontal">
+
+
+                <com.app.salonbeaute.ui.views.CustomRatingBar
+                    android:id="@+id/rbParlourRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:onlyForDisplay="true"
+                    app:stars="1" />
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/text_color_gray" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtReviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="10 Reviews"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="12sp"
+                    app:typeface="@string/font_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/ll_rating"
+                android:layout_marginTop="@dimen/x10"
+                android:orientation="vertical">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sabs The Salon"
+                    android:textColor="@color/app_red_dark"
+                    android:textSize="@dimen/x16"
+                    app:typeface="@string/font_bold" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:text="@string/lorem_small"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/x12"
+                    app:typeface="@string/font_normal" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:layout_marginBottom="@dimen/x5"
+            android:layout_marginTop="@dimen/x5"
+            android:background="@color/view_line_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/x10">
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share this Business"
+                android:textColor="@color/app_text_black"
+                android:textSize="@dimen/x16"
+                app:typeface="@string/font_bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x5"
+                android:orientation="horizontal">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/text_icon"
+                    android:gravity="start"
+                    android:text="@string/text"
+                    android:textColor="@color/text_color_gray"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtTwitter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/twitter_icon"
+                    android:gravity="start"
+                    android:text="@string/twitter"
+                    android:textColor="@color/text_color_gray"
+                    app:typeface="@string/font_normal" />
+
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtMessenger"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/messenger_icon"
+                    android:gravity="start"
+                    android:text="@string/messenger"
+                    android:textColor="@color/text_color_gray"
+                    app:typeface="@string/font_normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x10"
+                android:layout_marginTop="@dimen/x10"
+                android:orientation="horizontal">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtFacebook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/facebook_icon"
+                    android:gravity="start"
+                    android:text="@string/facebook"
+                    android:textColor="@color/text_color_gray"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/email_icon"
+                    android:gravity="start"
+                    android:text="@string/email"
+                    android:textColor="@color/text_color_gray"
+                    app:typeface="@string/font_normal" />
+
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtGooglePlus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="5dp"
+                    android:drawableStart="@drawable/google_icon"
+                    android:gravity="start"
+                    android:text="@string/google_plus"
+                    android:textColor="@color/text_color_gray"
+                    app:typeface="@string/font_normal" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

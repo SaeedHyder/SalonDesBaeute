@@ -201,8 +201,7 @@ public class MainActivity extends DockActivity implements OnClickListener, Image
         if (prefHelper.isLogin()) {
             replaceDockableFragment(HomeFragment.newInstance(), "HomeFragment");
         } else {
-            replaceDockableFragment(ParlourDetailFragement.newInstance(), "TutorialFragment");
-//            replaceDockableFragment(TutorialFragment.newInstance(), "TutorialFragment");
+            replaceDockableFragment(TutorialFragment.newInstance(), "TutorialFragment");
         }
     }
 

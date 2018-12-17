@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray_color"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x15"
+        app:cardCornerRadius="@dimen/x8"
+        app:cardElevation="@dimen/x5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x10">
+
+                <ImageView
+                    android:id="@+id/iv_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/hair_icon" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x8"
+                    android:layout_marginTop="@dimen/x8"
+                    android:layout_toEndOf="@+id/iv_icon"
+                    android:text="Hair Cutting"
+                    android:textColor="@color/app_text_black"
+                    android:textSize="@dimen/x14"
+                    app:typeface="@string/font_bold" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x8"
+                    android:layout_marginTop="@dimen/x8"
+                    android:layout_toEndOf="@+id/txt_title"
+                    android:gravity="end"
+                    android:text="Rs. 1,500.00/-"
+                    android:textColor="@color/app_red_dark"
+                    android:textSize="@dimen/x14"
+                    app:typeface="@string/font_bold" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_stylist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_title"
+                    android:layout_marginStart="@dimen/x8"
+                    android:layout_marginTop="@dimen/x5"
+                    android:layout_toEndOf="@+id/iv_icon"
+                    android:text="Senior - Andorse Marck"
+                    android:textColor="@color/app_text_black"
+                    android:textSize="@dimen/x12"
+                    app:typeface="@string/font_normal" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:layout_marginTop="@dimen/x5"
+                android:background="@color/view_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x10"
+                android:layout_marginTop="@dimen/x10"
+                android:orientation="vertical">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x8"
+                    android:layout_toEndOf="@+id/iv_icon"
+                    android:drawablePadding="@dimen/x10"
+                    android:drawableStart="@drawable/calendar_icon1"
+                    android:gravity="center_vertical"
+                    android:text="Wednesday, 12th September 2018"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x8"
+                    android:layout_marginTop="@dimen/x10"
+                    android:layout_toEndOf="@+id/iv_icon"
+                    android:drawablePadding="@dimen/x10"
+                    android:drawableStart="@drawable/map_icon3"
+                    android:gravity="center_vertical"
+                    android:text="12:00pm - 01:30pm (60 minutes)"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x8"
+                    android:layout_marginTop="@dimen/x8"
+                    android:layout_toEndOf="@+id/iv_icon"
+                    android:drawablePadding="@dimen/x10"
+                    android:drawableStart="@drawable/graph_icon"
+                    android:gravity="center_vertical"
+                    android:text="@string/dummy_address2"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/x10"
+            app:cardElevation="@dimen/x5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x5"
+                    android:layout_marginEnd="@dimen/x10"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_marginTop="@dimen/x10"
+                    android:text="Payment Method"
+                    android:textColor="@color/app_text_black"
+                    android:textSize="@dimen/x14"
+                    app:typeface="@string/font_bold" />
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/x10"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_marginTop="@dimen/x5"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_Online_payment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/timing_button_color"
+                        android:checked="true"
+                        android:text="@string/online_payment" />
+
+                    <RadioButton
+                        android:id="@+id/rb_pay_after_service"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/timing_button_color"
+                        android:text="@string/pay_after_service" />
+                </RadioGroup>
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/x10"
+                    android:layout_marginStart="@dimen/x18"
+                    android:layout_marginTop="@dimen/x5"
+                    android:layout_toEndOf="@+id/iv_icon"
+                    android:drawablePadding="@dimen/x10"
+                    android:drawableStart="@drawable/lock_icon"
+                    android:gravity="center_vertical"
+                    android:text="Pay securely with our online payment method"
+                    android:textColor="@color/app_orange"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:layout_marginBottom="@dimen/x10"
+                    android:layout_marginTop="@dimen/x10"
+                    android:background="@color/view_line_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.8"
+                    android:layout_marginBottom="@dimen/x10"
+                    android:layout_marginEnd="@dimen/x10"
+                    android:layout_marginStart="@dimen/x10"
+                    android:orientation="vertical">
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/x5"
+                        android:text="@string/booking_summary"
+                        android:textColor="@color/app_text_black"
+                        android:textSize="@dimen/x14"
+                        app:typeface="@string/font_bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.app.salonbeaute.ui.views.AnyTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="Hair Cutting with Trimming"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/x13"
+                            app:typeface="@string/font_normal" />
+
+                        <com.app.salonbeaute.ui.views.AnyTextView
+                            android:id="@+id/txt_price_summary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/txt_title"
+                            android:gravity="end"
+                            android:text="Rs. 1,500.00/-"
+                            android:textColor="@color/app_text_black"
+                            android:textSize="@dimen/x14"
+                            app:typeface="@string/font_normal" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x40"
+                    android:layout_gravity="bottom"
+                    android:background="@color/background_gray_color"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingEnd="@dimen/x12"
+                    android:paddingStart="@dimen/x12">
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Total"
+                        android:textColor="@color/app_text_black"
+                        android:textSize="@dimen/x13"
+                        app:typeface="@string/font_bold" />
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:id="@+id/txt_price_total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/txt_title"
+                        android:gravity="end"
+                        android:text="Rs. 1,500.00/-"
+                        android:textColor="@color/app_red_dark"
+                        android:textSize="@dimen/x14"
+                        app:typeface="@string/font_bold" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/bookNowButtonBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x40"
+                    android:layout_gravity="bottom"
+                    android:background="@color/app_red"
+                    android:text="@string/book_now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x14" />
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+</LinearLayout>

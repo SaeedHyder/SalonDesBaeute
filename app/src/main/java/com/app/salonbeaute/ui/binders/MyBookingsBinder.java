@@ -42,7 +42,12 @@ public class MyBookingsBinder extends RecyclerViewBinder<String> {
     public void bindView(String entity, int position, Object viewHolder, Context context) {
 
         final ViewHolder holder = (ViewHolder) viewHolder;
-
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickListner.onClick(entity,position);
+            }
+        });
 
     }
 

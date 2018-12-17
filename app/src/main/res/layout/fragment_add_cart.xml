@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.app.salonbeaute.ui.views.CustomRecyclerView
+        android:id="@+id/rv_addCart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x2"
+        app:cardElevation="@dimen/x5">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/x1"
+            android:elevation="@dimen/x15"
+            android:paddingStart="@dimen/x10">
+
+            <ImageView
+                android:id="@+id/bottomCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/bottom_cart_icon" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x5"
+                android:layout_marginStart="@dimen/x5"
+                android:layout_marginTop="@dimen/x5"
+                android:layout_toEndOf="@+id/bottomCart"
+                android:orientation="vertical">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_salon_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Senior"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/x16"
+                    app:typeface="@string/font_bold" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/x10"
+                    android:text="Rs. 1,500.00"
+                    android:textColor="@color/app_red_dark"
+                    android:textSize="@dimen/x16"
+                    app:typeface="@string/font_bold" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bookNowButton"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/x35"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom"
+                android:layout_marginEnd="@dimen/x15"
+                android:background="@drawable/rounded_red_button"
+                android:text="@string/book_now"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x14" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

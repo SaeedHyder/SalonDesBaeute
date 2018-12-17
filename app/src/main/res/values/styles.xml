@@ -27,9 +27,16 @@
         <item name="colorAccent">@color/app_red</item>
         <item name="colorPrimaryDark">@color/black</item>
         <item name="colorPrimary">@color/black</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
+        <item name="cardViewStyle">@style/CardView</item>
        <!-- <item name="android:windowTranslucentStatus">true</item>-->
 
 
+    </style>
+
+    <style name="AppThemeTwo" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlActivated">#1a237e</item>
+        <item name="android:colorControlNormal">#00b0ff</item>
     </style>
 
 </resources>

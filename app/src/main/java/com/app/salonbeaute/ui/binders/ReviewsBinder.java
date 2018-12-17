@@ -46,11 +46,18 @@ public class ReviewsBinder extends RecyclerViewBinder<String> {
 
         final ViewHolder holder = (ViewHolder) viewHolder;
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickListner.onClick(entity, position);
+            }
+        });
+
         holder.menuBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PopupMenu popupMenu = new PopupMenu();
-                popupMenu.initMenu(dockActivity,view);
+                popupMenu.initMenu(dockActivity, view);
             }
         });
 

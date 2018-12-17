@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
 import com.app.salonbeaute.helpers.UIHelper;
+import com.app.salonbeaute.interfaces.RecyclerClickListner;
 import com.app.salonbeaute.ui.adapters.PromotionAdapter;
 import com.app.salonbeaute.ui.binders.NearestParlourBinder;
 import com.app.salonbeaute.ui.binders.PromotionsBinder;
@@ -26,7 +27,7 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import me.relex.circleindicator.CircleIndicator;
 
-public class PromotionsFragment extends BaseFragment {
+public class PromotionsFragment extends BaseFragment implements RecyclerClickListner {
     @BindView(R.id.btnBack)
     ImageView btnBack;
     @BindView(R.id.btnSearch)
@@ -76,13 +77,6 @@ public class PromotionsFragment extends BaseFragment {
     }
 
     private void setListData() {
-       /* if (entity.size() <= 0) {
-            txtNoresult.setVisibility(View.VISIBLE);
-            lvFitnessClasses.setVisibility(View.GONE);
-        } else {
-            txtNoresult.setVisibility(View.GONE);
-            lvFitnessClasses.setVisibility(View.VISIBLE);
-        }*/
         listCollection = new ArrayList<>();
         listCollection.add("drawable://" + R.drawable.hair_image_bg);
         listCollection.add("drawable://" + R.drawable.spa_image_bg);
@@ -91,7 +85,7 @@ public class PromotionsFragment extends BaseFragment {
         listCollection.add("drawable://" + R.drawable.aesthetics_image_bg);
 
 
-        rvPromotionsList.BindRecyclerView(new PromotionsBinder(getDockActivity(), prefHelper), listCollection,
+        rvPromotionsList.BindRecyclerView(new PromotionsBinder(getDockActivity(), prefHelper,this), listCollection,
                 new LinearLayoutManager(getDockActivity(), LinearLayoutManager.VERTICAL, false)
                 , new DefaultItemAnimator());
     }
@@ -124,9 +118,13 @@ public class PromotionsFragment extends BaseFragment {
                 getDockActivity().popFragment();
                 break;
             case R.id.btnSearch:
-                UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+                getDockActivity().replaceDockableFragment(SearchFragment.newInstance(), "SearchFragment");
                 break;
         }
     }
 
+    @Override
+    public void onClick(Object entity, int position) {
+        getDockActivity().replaceDockableFragment(ParlourServiceDetailFragment.newInstance(),"ParlourServiceDetailFragment");
+    }
 }

@@ -94,6 +94,23 @@ public class TitleBar extends RelativeLayout {
 		btnRight2.setImageResource(R.drawable.search_icon);
 	}
 
+	public void showShareButton(OnClickListener listener) {
+		btnRight2.setVisibility(View.VISIBLE);
+		btnRight2.setOnClickListener(listener);
+		btnRight2.setImageResource(R.drawable.share_icon);
+	}
+	public void showRefreshFilterButton(OnClickListener listener) {
+		btnRight2.setVisibility(View.VISIBLE);
+		btnRight2.setOnClickListener(listener);
+		btnRight2.setImageResource(R.drawable.refresh_icon);
+	}
+
+	public void showCartButton(OnClickListener listener) {
+		btnRight.setVisibility(View.VISIBLE);
+		btnRight.setOnClickListener(listener);
+		btnRight.setImageResource(R.drawable.cart_icon);
+	}
+
 	public void setSubHeading(String heading) {
 		txtTitle.setVisibility(View.VISIBLE);
 		txtTitle.setText(heading);

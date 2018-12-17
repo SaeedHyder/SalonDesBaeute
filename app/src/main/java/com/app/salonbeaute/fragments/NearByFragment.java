@@ -142,4 +142,10 @@ public class NearByFragment extends BaseFragment {
         super.setTitleBar(titleBar);
         titleBar.hideTitleBar();
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.tab_layout_color));
+    }
 }

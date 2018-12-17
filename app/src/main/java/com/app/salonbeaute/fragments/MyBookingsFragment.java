@@ -1,5 +1,6 @@
 package com.app.salonbeaute.fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -66,6 +67,8 @@ public class MyBookingsFragment extends BaseFragment implements RecyclerClickLis
 
     }
 
+
+
     private void setTabLayout() {
 
         if (tabLayout != null) {
@@ -128,11 +131,19 @@ public class MyBookingsFragment extends BaseFragment implements RecyclerClickLis
     @Override
     public void onClick(Object entity, int position) {
 
+        getDockActivity().addDockableFragment(BookingDetailFragment.newInstance(),"BookingDetailFragment");
+
     }
 
 
     @OnClick(R.id.btnBack)
     public void onViewClicked() {
         getDockActivity().popFragment();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.tab_layout_color));
     }
 }

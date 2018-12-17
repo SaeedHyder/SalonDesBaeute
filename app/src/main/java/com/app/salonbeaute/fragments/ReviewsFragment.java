@@ -89,7 +89,7 @@ public class ReviewsFragment extends BaseFragment implements RecyclerClickListne
         titleBar.showSearchButton(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+                getDockActivity().replaceDockableFragment(SearchFragment.newInstance(), "SearchFragment");
             }
         });
     }
@@ -98,6 +98,6 @@ public class ReviewsFragment extends BaseFragment implements RecyclerClickListne
 
     @Override
     public void onClick(Object entity, int position) {
-
+        getDockActivity().replaceDockableFragment(ReviewDetailFragment.newInstance(), "ReviewDetailFragment");
     }
 }

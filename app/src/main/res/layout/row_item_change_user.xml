@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll_mainFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x5"
+        android:layout_marginTop="@dimen/x5"
+        android:padding="@dimen/x5">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/x50"
+            android:src="@drawable/image" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/x5"
+            android:layout_toEndOf="@+id/image"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.app.salonbeaute.ui.views.AnyTextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"
+                android:text="Nick"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_radio_btn"
+               />
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
+

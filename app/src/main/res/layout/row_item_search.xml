@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_mainFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/x10"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/x10">
+
+            <RelativeLayout
+                android:id="@+id/containerImages"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x150">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:clipToPadding="false" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x48"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/x10"
+                    android:layout_marginEnd="@dimen/x15"
+                    custom:ci_drawable="@drawable/red_radius"
+                    custom:ci_drawable_unselected="@drawable/white_radius" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x3"
+                android:layout_marginEnd="@dimen/x3"
+                android:layout_marginBottom="@dimen/x5"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/containerImages"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:text="Sabs The Salon"
+                        android:textColor="@color/app_red_dark"
+                        android:textSize="@dimen/x16"
+                        app:typeface="@string/font_bold" />
+
+                    <ImageView
+                        android:layout_width="@dimen/x10"
+                        android:layout_height="@dimen/x10"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/map_icon" />
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:id="@+id/txtDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:text="8 Km Away"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="12sp"
+                        app:typeface="@string/font_normal" />
+                </LinearLayout>
+
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txt_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:text="@string/lorem_small"
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="@dimen/x12"
+                    app:typeface="@string/font_normal" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/ll_data"
+                android:layout_marginTop="@dimen/x3"
+                android:layout_marginStart="@dimen/x3"
+                android:layout_marginEnd="@dimen/x3"
+                android:layout_marginBottom="@dimen/x5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/homeshield_icon_gray" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtServiceType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="@string/home_services"
+                    android:textColor="@color/text_color_gray"
+                    app:typeface="@string/font_normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/ll_data"
+                android:layout_marginTop="@dimen/x3"
+                android:layout_marginStart="@dimen/x3"
+                android:layout_marginEnd="@dimen/x3"
+                android:layout_marginBottom="@dimen/x5"
+                android:orientation="horizontal">
+
+                <com.app.salonbeaute.ui.views.CustomRatingBar
+                    android:id="@+id/rbParlourRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:onlyForDisplay="true"
+                    app:stars="1" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

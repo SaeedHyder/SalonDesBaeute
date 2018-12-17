@@ -166,11 +166,12 @@ public class MapViewFragment extends BaseFragment implements OnMapReadyCallback 
 
     @OnClick(R.id.btn_filter)
     public void onViewClicked() {
-        UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+     getDockActivity().replaceDockableFragment(FilterFragment.newInstance(),"FilterFragment");
     }
 
     @Override
     public void onClick(Object entity, int position) {
 
+        getDockActivity().replaceDockableFragment(ParlourDetailFragement.newInstance(),"ParlourDetailFragement");
     }
 }

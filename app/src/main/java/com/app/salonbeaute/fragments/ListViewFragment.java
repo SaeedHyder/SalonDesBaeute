@@ -92,17 +92,13 @@ public class ListViewFragment extends BaseFragment implements RecyclerClickListn
         titleBar.hideTitleBar();
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
+
 
     @OnClick({R.id.btn_filter})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_filter:
-                UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+                getDockActivity().replaceDockableFragment(FilterFragment.newInstance(),"FilterFragment");
                 break;
 
         }
@@ -110,6 +106,6 @@ public class ListViewFragment extends BaseFragment implements RecyclerClickListn
 
     @Override
     public void onClick(Object entity, int position) {
-
+        getDockActivity().replaceDockableFragment(ParlourDetailFragement.newInstance(),"ParlourDetailFragement");
     }
 }

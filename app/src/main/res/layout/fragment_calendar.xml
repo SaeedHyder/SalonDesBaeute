@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:background="@drawable/background9">
+
+        <com.applandeo.materialcalendarview.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:headerLabelColor="@color/white"
+            app:headerColor="@color/calendar_header"
+            app:previousButtonSrc="@drawable/unactive_arrow"
+            app:forwardButtonSrc="@drawable/active_arrow"
+            app:pagesColor="@color/calendar_color"
+            app:daysLabelsColor="@color/calendar_days"
+            app:todayLabelColor="@color/white"
+            app:abbreviationsBarColor="@color/calendar_color"
+            app:abbreviationsLabelsColor="@color/calendar_abrevation_text"
+            app:anotherMonthsDaysLabelsColor="@color/calendar_unselected_days"
+            app:selectionLabelColor="@color/white"
+            app:selectionColor="@color/app_red_dark"
+            app:type="one_day_picker"
+            app:eventsEnabled="false"
+            app:datePicker="true"
+            app:disabledDaysLabelsColor="@color/calendar_unselected_days"
+            />
+
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/x3"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_marginStart="@dimen/x10"
+                android:layout_marginTop="@dimen/x5"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_current_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/timing_button_color"
+                    android:checked="true"
+                    android:text="@string/current_address" />
+
+                <RadioButton
+                    android:id="@+id/rb_new_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1"
+                    android:buttonTint="@color/timing_button_color"
+                    android:text="@string/new_address" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:layout_marginBottom="@dimen/x5"
+                android:layout_marginTop="@dimen/x5"
+                android:background="@color/view_line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_marginStart="@dimen/x10"
+                android:layout_marginBottom="@dimen/x10"
+                android:orientation="vertical">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/txtAddressTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x5"
+                    android:text="@string/current_address"
+                    android:textColor="@color/app_text_black"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.AnyEditTextView
+                    android:id="@+id/edt_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x100"
+                    android:layout_marginTop="@dimen/x5"
+                    android:padding="@dimen/x8"
+                    android:background="@drawable/address_selected_background"
+                    android:gravity="top"
+                    android:text="@string/lorem_small"
+                    android:hint="@string/add_address"
+                    android:inputType="textMultiLine"
+                    android:scrollbars="vertical"
+                    android:singleLine="false"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/x12"
+                    app:typeface="@string/font_normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x35"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_marginStart="@dimen/x10"
+                android:layout_marginBottom="@dimen/x10"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:background="@drawable/rounded_button_cancel"
+                    android:text="@string/cancel"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/cancel_text_color"
+                    android:textSize="@dimen/x14" />
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/x5"
+                    android:background="@drawable/rounded_red_button"
+                    android:text="@string/save"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x14" />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="@dimen/x3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F6F5FD"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x8"
+                    android:text="@string/select_time"
+                    android:textColor="@color/app_text_black"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.CustomRecyclerView
+                    android:id="@+id/rv_timing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/x10">
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x35"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/x10_"
+
+                    android:layout_toEndOf="@+id/image"
+                    android:background="@drawable/tag_base_1"
+                    android:drawableEnd="@drawable/tag_close"
+                    android:drawablePadding="@dimen/x10"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/x3"
+                    android:paddingEnd="@dimen/x10"
+                    android:paddingStart="@dimen/x15"
+                    android:paddingTop="@dimen/x3"
+                    android:text="Mikha"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/x40"
+                    android:src="@drawable/image01" />
+
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:id="@+id/btn_change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x40"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/change"
+                    android:textColor="@color/app_red_dark"
+                    android:textSize="@dimen/x13"
+                    app:typeface="@string/font_normal" />
+
+            </RelativeLayout>
+
+            <CheckBox
+                android:id="@+id/cb_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x10"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_marginStart="@dimen/x10"
+                android:buttonTint="@color/dark_gray_checkbox"
+                android:text="I would like to avial home service."
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/x11" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <Button
+        android:id="@+id/proceedBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x40"
+        android:layout_gravity="bottom"
+        android:background="@color/app_red"
+        android:text="Proceed"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x14" />
+
+
+
+</LinearLayout>

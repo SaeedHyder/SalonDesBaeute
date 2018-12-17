@@ -135,6 +135,8 @@
     <string name="confirm_password_error">Confirm Password did not match</string>
     <string name="same_password_error">New password should be changed from old password</string>
     <string name="enter_name">Enter your Name</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter_review">Enter review</string>
     <string name="terms_and_condition">Terms And Conditions</string>
     <string name="about_us">About Us</string>
     <string name="contact_us">Contact Us</string>
@@ -165,7 +167,6 @@
     <string name="my_bookings">My Bookings</string>
     <string name="up_coming">Up Coming</string>
     <string name="previous">Previous</string>
-<<<<<<< HEAD
     <string name="change_password_1">Change Password</string>
     <string name="reviews">Reviews</string>
     <string name="privacy_policy">Privacy Policy</string>
@@ -177,6 +178,8 @@
     <string name="map_view">Map View</string>
     <string name="list_view">List View</string>
     <string name="dummy_address">17-C 24th Commercial St- (021) 258551363 \n Opens at 8:00am Closes at 11:00pm</string>
+    <string name="dummy_address1">17-C 24th Commercial St- (021) 258551363  Opens at 8:00am Closes at 11:00pm</string>
+    <string name="dummy_address2">37 B St,Shop 11, Wasi Building R444, Behind Shokath Restaurant, Karachi, Pakistan</string>
     <string name="my_profile">My Profile</string>
     <string name="gender">Gender</string>
     <string name="city">City</string>
@@ -197,11 +200,43 @@
     <string name="camera">Camera</string>
     <string name="internet_issue">Internet Issue,Upload Image Again</string>
     <string name="filter">Filter</string>
-=======
     <string name="home_services">Home Services</string>
     <string name="services">Services</string>
-    <string name="promotions">Promotions</string>
     <string name="about">About</string>
->>>>>>> 71410b55f76a223be0f575e456b742785aaba8a3
+    <string name="open_hours">Open Hours</string>
+    <string name="staff">Staff</string>
+    <string name="details">Details</string>
+    <string name="book_now">Book Now</string>
+    <string name="text">Text</string>
+    <string name="twitter">Twitter</string>
+    <string name="messenger">Messenger</string>
+    <string name="facebook">Facebook</string>
+    <string name="google_plus">Google Plus</string>
+    <string name="filters">Filters</string>
+    <string name="change">Change</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="search_results">Search Results</string>
+    <string name="relevant_tags">Relevant Tags</string>
+    <string name="was_this_review_helpful">Was this review helpful?</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="select_time">Select Time</string>
+    <string name="current_address">Current Address</string>
+    <string name="add_new_address">Add New Address</string>
+    <string name="new_address">New Address</string>
+    <string name="add_address">Add Address</string>
+    <string name="save">Save</string>
+    <string name="online_payment">Online Payment</string>
+    <string name="pay_after_service">Pay After Service</string>
+    <string name="booking_summary">Booking Summary</string>
+    <string name="write_review">Write a Review</string>
+    <string name="please_rate_your_experince">Please rate your experince.</string>
+    <string name="thank_you_1">Thank you!</string>
+    <string name="tap_a_star_to_rate">Tap a star to rate</string>
+    <string name="this_would_help_us_continually_improve_our_service">This would help us Continually improve our service</string>
+    <string name="review_title_i_e_nice_trip">Review Title(i.e Nice trip)</string>
+    <string name="would_you_like_to_write_anything_about_your_trip_with_salon_des_beaute">Would you like to write anything about your trip with Salon Des Beaute</string>
+    <string name="your_reservation_request_has_been_received_n_we_ll_send_you_reminder_before_your_reservation_date">Your reservation request has been received.\n We\'ll send you reminder before your reservation date.</string>
+
 
 </resources>

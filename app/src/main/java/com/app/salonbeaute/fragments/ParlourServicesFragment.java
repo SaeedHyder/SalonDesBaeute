@@ -140,7 +140,7 @@ public class ParlourServicesFragment extends BaseFragment implements RecyclerCli
         titleBar.showSearchButton(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getDockActivity().replaceDockableFragment(NearByFragment.newInstance(), "NearByFragment");
+                getDockActivity().replaceDockableFragment(SearchFragment.newInstance(), "SearchFragment");
             }
         });
     }

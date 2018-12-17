@@ -1,152 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_gray_color"
     android:orientation="vertical">
 
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/app_bar"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll">
 
-            <android.support.design.widget.CollapsingToolbarLayout
-                android:id="@+id/toolbar_layout"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:animateLayoutChanges="true"
-                android:fitsSystemWindows="true"
-                app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll">
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="5dp">
 
                 <RelativeLayout
+                    android:id="@+id/containerImages"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="5dp">
+                    android:layout_height="@dimen/x200">
 
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/containerImages"
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        app:cardBackgroundColor="@color/tab_layout_color"
-                        app:cardCornerRadius="15dp"
-                        app:cardPreventCornerOverlap="true"
-                        app:cardUseCompatPadding="true">
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:clipToPadding="false" />
 
-
-                        <com.daimajia.slider.library.SliderLayout
-                            android:id="@+id/imageSlider"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            app:auto_cycle="true"
-                            app:indicator_visibility="visible"
-                            app:pager_animation="Default"
-                            app:pager_animation_span="1100" />
-
-
-                        <com.daimajia.slider.library.Indicators.PagerIndicator
-                            android:id="@+id/pagerIndicator"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|end"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
-                            app:selected_color="@color/indicatorSelectedColor"
-                            app:selected_height="15dp"
-                            app:selected_width="15dp"
-                            app:shape="oval"
-                            app:unselected_color="@color/white"
-                            app:unselected_height="13dp"
-                            app:unselected_width="13dp" />
-                    </android.support.v7.widget.CardView>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_below="@+id/containerImages"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="15dp"
-                            android:layout_height="15dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginEnd="5dp"
-                            android:src="@drawable/homeshield_icon_gray" />
-
-                        <com.app.salonbeaute.ui.views.AnyTextView
-                            android:id="@+id/txtServiceType"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawablePadding="5dp"
-                            android:gravity="center"
-                            android:text="@string/home_services"
-                            android:textColor="@color/text_color_gray"
-                            app:typeface="@string/font_normal" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="@dimen/x100"
+                        android:layout_height="@dimen/x48"
+                        android:layout_alignParentBottom="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_below="@+id/containerImages"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:layout_gravity="center"
-                            android:layout_marginEnd="5dp"
-                            android:src="@drawable/map_icon" />
-
-                        <com.app.salonbeaute.ui.views.AnyTextView
-                            android:id="@+id/txtDistance"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:drawablePadding="5dp"
-                            android:gravity="center"
-                            android:text="8 Km Away"
-                            android:textColor="@color/text_color_gray"
-                            android:textSize="12sp"
-                            app:typeface="@string/font_normal" />
-
-                        <View
-                            android:layout_width="0.5dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/text_color_gray" />
-
-                        <com.app.salonbeaute.ui.views.CustomRatingBar
-                            android:id="@+id/rbParlourRating"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            app:onlyForDisplay="true"
-                            app:stars="1" />
-                    </LinearLayout>
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="@dimen/x10"
+                        android:layout_marginEnd="@dimen/x15"
+                        custom:ci_drawable="@drawable/red_radius"
+                        custom:ci_drawable_unselected="@drawable/white_radius" />
                 </RelativeLayout>
-            </android.support.design.widget.CollapsingToolbarLayout>
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                app:tabGravity="fill"
-                app:tabMode="fixed"
-                app:tabSelectedTextColor="@color/app_red_dark"
-                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
-                app:tabTextColor="@color/tab_layout_color" />
-        </android.support.design.widget.AppBarLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/containerImages"
+                    android:layout_marginTop="@dimen/x3"
+                    android:orientation="horizontal">
 
-        <include layout="@layout/content_parlour_detail" />
-    </android.support.design.widget.CoordinatorLayout>
-</LinearLayout>
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/homeshield_icon_gray" />
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:id="@+id/txtServiceType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:text="@string/home_services"
+                        android:textColor="@color/text_color_gray"
+                        app:typeface="@string/font_normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/containerImages"
+                    android:layout_marginTop="@dimen/x3"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/map_icon" />
+
+                    <com.app.salonbeaute.ui.views.AnyTextView
+                        android:id="@+id/txtDistance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:text="8 Km Away"
+                        android:textColor="@color/text_color_gray"
+                        android:textSize="12sp"
+                        app:typeface="@string/font_normal" />
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginStart="5dp"
+                        android:background="@color/text_color_gray" />
+
+                    <com.app.salonbeaute.ui.views.CustomRatingBar
+                        android:id="@+id/rbParlourRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        app:onlyForDisplay="true"
+                        app:stars="1" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:tabBackground="@color/white"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/app_red_dark"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/tab_layout_color" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

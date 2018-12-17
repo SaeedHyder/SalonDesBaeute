@@ -96,7 +96,7 @@ public class ParlourServiceDetailFragment extends BaseFragment implements Recycl
         titleBar.showSearchButton(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+                getDockActivity().replaceDockableFragment(SearchFragment.newInstance(), "SearchFragment");
             }
         });
     }
@@ -104,11 +104,13 @@ public class ParlourServiceDetailFragment extends BaseFragment implements Recycl
 
     @OnClick(R.id.btn_filter)
     public void onViewClicked() {
-        UIHelper.showShortToastInDialoge(getDockActivity(), getResString(R.string.will_be_implemented));
+        getDockActivity().replaceDockableFragment(FilterFragment.newInstance(),"FilterFragment");
     }
 
     @Override
     public void onClick(Object entity, int position) {
+
+        getDockActivity().replaceDockableFragment(AddCartFragment.newInstance(), "AddCartFragment");
 
     }
 }

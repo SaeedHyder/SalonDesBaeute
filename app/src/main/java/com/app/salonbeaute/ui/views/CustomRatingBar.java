@@ -34,9 +34,9 @@ public class CustomRatingBar extends LinearLayout {
     private float mCurrentScore = 2.5f;
 
 
-    private int mStarOnResource = R.drawable.rate_star_selected;
-    private int mStarOffResource = R.drawable.rate_star_unselected;
-    private int mStarHalfResource = R.drawable.rate_star_selected;
+    private int mStarOnResource = R.drawable.yellow_star;
+    private int mStarOffResource = R.drawable.gray_star;
+    private int mStarHalfResource = R.drawable.yellow_star;
 
     private ImageView[] mStarsViews;
     private float mStarPadding;

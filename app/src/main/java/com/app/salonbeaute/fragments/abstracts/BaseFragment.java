@@ -113,6 +113,8 @@ public abstract class BaseFragment extends Fragment implements webServiceRespons
 		
 		isLoading = true;
 	}
+
+
 	
 	protected void loadingFinished() {
 		

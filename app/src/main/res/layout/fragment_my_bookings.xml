@@ -49,6 +49,7 @@
         app:tabSelectedTextColor="@color/white"
         app:tabTextColor="@color/app_text_color_login"
         app:tabIndicator="@color/tab_layout_color"
+        app:tabIndicatorColor="@color/tab_layout_color"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabMode="fixed" />
 

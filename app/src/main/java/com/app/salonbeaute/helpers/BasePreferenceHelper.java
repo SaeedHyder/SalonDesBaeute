@@ -10,6 +10,7 @@ public class BasePreferenceHelper extends PreferenceHelper {
     private Context context;
 
     protected static final String KEY_LOGIN_STATUS = "islogin";
+    protected static final String KEY_GUEST_STATUS = "isguest";
 
     private static final String FILENAME = "preferences";
 
@@ -28,6 +29,15 @@ public class BasePreferenceHelper extends PreferenceHelper {
 
     public void setLoginStatus( boolean isLogin ) {
         putBooleanPreference( context, FILENAME, KEY_LOGIN_STATUS, isLogin );
+    }
+
+    public boolean isGuestUser() {
+        return getBooleanPreference(context, FILENAME, KEY_GUEST_STATUS);
+    }
+
+
+    public void setGuestStatus( boolean isGuest ) {
+        putBooleanPreference( context, FILENAME, KEY_GUEST_STATUS, isGuest );
     }
 
     public boolean isLogin() {

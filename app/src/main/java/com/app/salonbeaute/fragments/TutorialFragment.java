@@ -10,6 +10,7 @@ import android.view.WindowManager;
 
 import com.app.salonbeaute.R;
 import com.app.salonbeaute.fragments.abstracts.BaseFragment;
+import com.app.salonbeaute.interfaces.TutorialInterface;
 import com.app.salonbeaute.ui.adapters.CustomPageAdapter;
 import com.app.salonbeaute.ui.adapters.TutorialAdapter;
 import com.app.salonbeaute.ui.views.AnyTextView;
@@ -23,7 +24,7 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import me.relex.circleindicator.CircleIndicator;
 
-public class TutorialFragment extends BaseFragment {
+public class TutorialFragment extends BaseFragment implements TutorialInterface {
     @BindView(R.id.viewpager)
     ViewPager viewPager;
     @BindView(R.id.indicator)
@@ -78,7 +79,7 @@ public class TutorialFragment extends BaseFragment {
         imagesCollection.add("drawable://" + R.drawable.background2);
         imagesCollection.add("drawable://" + R.drawable.background3);
 
-        tutorialAdapter = new TutorialAdapter(getMainActivity(), imagesCollection);
+        tutorialAdapter = new TutorialAdapter(getMainActivity(), imagesCollection,this);
         viewPager.setAdapter(tutorialAdapter);
         indicator.setViewPager(viewPager);
     }
@@ -107,5 +108,12 @@ public class TutorialFragment extends BaseFragment {
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onClick() {
+        prefHelper.setLoginStatus(false);
+        prefHelper.setGuestStatus(true);
+        getDockActivity().replaceDockableFragment(HomeFragment.newInstance(),"HomeFragment");
     }
 }

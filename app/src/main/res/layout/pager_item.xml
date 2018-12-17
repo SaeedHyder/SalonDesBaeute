@@ -12,8 +12,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.7"
         app:cardCornerRadius="@dimen/x10"
-        app:cardElevation="@dimen/x5"
-        project:cardCornerRadius="3dp">
+        app:cardElevation="@dimen/x8">
 
         <ImageView
             android:id="@+id/imageView"

@@ -45,6 +45,12 @@ public class MapViewBinder extends RecyclerViewBinder<String> {
 
         final ViewHolder holder = (ViewHolder) viewHolder;
 
+        holder.rlItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               clickListner.onClick(entity,position);
+            }
+        });
 
     }
 

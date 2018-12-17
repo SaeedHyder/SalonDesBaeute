@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/action_bar_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x50"
+            android:background="@drawable/gray_shadow"
+           >
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/x13"
+                android:scaleType="fitXY"
+                android:src="@drawable/back"
+                android:visibility="visible" />
+
+
+            <com.app.salonbeaute.ui.views.AnyEditTextView
+                android:id="@+id/editText_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               android:layout_toEndOf="@+id/btnBack"
+                android:layout_toStartOf="@+id/btnCross"
+                android:background="@color/transparent"
+                android:gravity="start|center_vertical"
+                android:hint="@string/search_results"
+                android:textColorHint="@color/white"
+                android:imeOptions="actionSearch"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x17"
+                app:typeface="OpenSans-Regular.ttf" />
+
+            <ImageView
+                android:id="@+id/btnCross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/x14"
+                android:layout_marginEnd="@dimen/x8"
+                android:scaleType="fitXY"
+                android:src="@drawable/close_icon"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+        <com.app.salonbeaute.ui.views.AnyTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/x10"
+            android:layout_marginTop="@dimen/x5"
+            android:gravity="start"
+            android:text="@string/relevant_tags"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x12"
+            app:typeface="OpenSans-Regular.ttf" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x50"
+            android:gravity="center_vertical">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x30"
+                app:tabBackground="@drawable/tab_layout_search"
+                app:tabIndicator="@color/transparent"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="@color/app_red_dark"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                app:tabTextColor="@color/tab_unselect_color" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.app.salonbeaute.ui.views.CustomRecyclerView
+        android:id="@+id/rl_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    />
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.app.salonbeaute.fragments;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,6 +41,7 @@ public class SideMenuFragment extends BaseFragment implements RecyclerClickListn
     AnyTextView viewProfile;
 
     private ArrayList<SideMenuEnt> collection;
+    private long mLastClickTime = 0;
 
     public static SideMenuFragment newInstance() {
         return new SideMenuFragment();
@@ -100,12 +102,18 @@ public class SideMenuFragment extends BaseFragment implements RecyclerClickListn
 
     @Override
     public void onClick(Object entity, int position) {
+
+      /*  if (SystemClock.elapsedRealtime() - mLastClickTime < 1000) {
+            return;
+        }*/
+
         SideMenuEnt ent = (SideMenuEnt) entity;
 
         if (ent.getTitle().equals(AppConstants.Home)) {
             getMainActivity().closeDrawer();
 
         } else if (ent.getTitle().equals(AppConstants.AboutSalonDesBeaute)) {
+
             getDockActivity().replaceDockableFragment(AboutUsFragment.newInstance(), "AboutUsFragment");
 
         } else if (ent.getTitle().equals(AppConstants.ContactUs)) {

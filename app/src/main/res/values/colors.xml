@@ -27,13 +27,12 @@
     <color name="gray_dark">#929292</color>
 
 
-
     <!-- App specific colors -->
     <color name="forgot_pass_color">#BB4000</color>
     <color name="notification_date_color">#D15801</color>
     <color name="text_color">#654F76</color>
-    
-    
+
+
     <color name="color_rbtn">#0E8593</color>
     <color name="holo_blue">#FF33B5E5</color>
     <color name="progress_start">#B31025</color>
@@ -60,6 +59,25 @@
     <color name="blue_view">#4A3B61</color>
     <color name="background_gray_color">#EBEEF5</color>
     <color name="light_gray">#F7F7F7</color>
+    <color name="app_yellow">#FFCC00</color>
+    <color name="dark_gray_checkbox">#5E5E60</color>
+    <color name="view_color_2">#DADEE1</color>
+    <color name="tab_unselect_color">#4F4567</color>
+    <color name="backgroun_color">#FAF9FE</color>
+    <color name="excellent_color">#4BA64B</color>
+    <color name="verygood_color">#A8D13E</color>
+    <color name="good_color">#EEE34A</color>
+    <color name="average_color">#E5A827</color>
+    <color name="poor_color">#EE213F</color>
+    <color name="timing_button_color">#322251</color>
+    <color name="cancel_text_color">#756D82</color>
+    <color name="calendar_color">#1E1033</color>
+    <color name="calendar_days">#85779A</color>
+    <color name="calendar_unselected_days">#3B2D50</color>
+    <color name="calendar_text">#76688B</color>
+    <color name="calendar_header">#301131</color>
+    <color name="calendar_abrevation_text">#916988</color>
+    <color name="app_orange">#CF7576</color>
 
 
 </resources>

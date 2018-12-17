@@ -3,6 +3,7 @@ package com.app.salonbeaute.entities;
 public class ServicesEnt {
 
     String title;
+    String Detail;
     int image;
     int border;
 
@@ -10,6 +11,21 @@ public class ServicesEnt {
         this.title = title;
         this.image = image;
         this.border = border;
+    }
+
+    public ServicesEnt(String title, String detail, int image, int border) {
+        this.title = title;
+        Detail = detail;
+        this.image = image;
+        this.border = border;
+    }
+
+    public String getDetail() {
+        return Detail;
+    }
+
+    public void setDetail(String detail) {
+        Detail = detail;
     }
 
     public String getTitle() {

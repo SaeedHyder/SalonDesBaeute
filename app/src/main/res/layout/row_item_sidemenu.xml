@@ -38,5 +38,17 @@
 
 
     </LinearLayout>
+    
+    <View
+        android:id="@+id/seperator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_below="@+id/ll_item"
+        android:layout_marginEnd="@dimen/x15"
+        android:layout_marginStart="@dimen/x15"
+        android:layout_marginTop="@dimen/x10"
+        android:layout_marginBottom="@dimen/x5"
+        android:background="@drawable/seperator1"
+        android:visibility="gone"/>
 
 </RelativeLayout>

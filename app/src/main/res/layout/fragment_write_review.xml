@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_gray_color"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/x7">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FAF9FE"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/x15"
+                android:paddingTop="@dimen/x15">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/hand_icon" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x10"
+                    android:gravity="center"
+                    android:text="@string/thank_you_1"
+                    android:textColor="@color/app_text_black"
+                    android:textSize="@dimen/x14"
+                    app:typeface="@string/font_bold" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x2"
+                    android:gravity="center"
+                    android:text="@string/please_rate_your_experince"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/x12"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x2"
+                    android:gravity="center"
+                    android:text="@string/this_would_help_us_continually_improve_our_service"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/x12"
+                    app:typeface="@string/font_normal" />
+
+                <com.app.salonbeaute.ui.views.CustomRatingBar
+                    android:id="@+id/rbParlourRating"
+                    android:layout_width="@dimen/x160"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/x10"
+                    app:starPadding="@dimen/x3"
+                    app:stars="1" />
+
+                <com.app.salonbeaute.ui.views.AnyTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x2"
+                    android:gravity="center"
+                    android:text="@string/tap_a_star_to_rate"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/x9"
+                    app:typeface="@string/font_normal" />
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/x15"
+            android:orientation="vertical">
+
+            <com.app.salonbeaute.ui.views.AnyEditTextView
+                android:id="@+id/txt_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x40"
+                android:background="@drawable/rounded_white_button"
+                android:gravity="center_vertical"
+                android:hint="@string/review_title_i_e_nice_trip"
+                android:imeOptions="actionDone"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/x20"
+                android:singleLine="true"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+            <com.app.salonbeaute.ui.views.AnyEditTextView
+                android:id="@+id/txt_box"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x200"
+                android:layout_marginTop="@dimen/x10"
+                android:background="@drawable/rectangle_white_box"
+                android:gravity="top"
+                android:hint="@string/would_you_like_to_write_anything_about_your_trip_with_salon_des_beaute"
+                android:imeOptions="actionDone"
+                android:scrollbars="vertical"
+                android:paddingBottom="@dimen/x10"
+                android:paddingEnd="@dimen/x20"
+                android:paddingStart="@dimen/x20"
+                android:paddingTop="@dimen/x10"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/x13"
+                app:typeface="@string/font_normal" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/sumitButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x40"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/x15"
+            android:background="@drawable/rounded_red_button"
+            android:text="Submit Review"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x14" />
+
+
+    </LinearLayout>
+</ScrollView>

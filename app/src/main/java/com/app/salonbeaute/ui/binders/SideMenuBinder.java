@@ -49,6 +49,12 @@ public class SideMenuBinder extends RecyclerViewBinder<SideMenuEnt> {
             holder.llItem.setBackground(dockActivity.getResources().getDrawable(R.color.transparent));
         }
 
+        if (position == 2 || position == 8) {
+            holder.seperator.setVisibility(View.VISIBLE);
+        } else {
+            holder.seperator.setVisibility(View.GONE);
+        }
+
         holder.txtItemName.setText(entity.getTitle());
         holder.icon.setImageResource(entity.getImage());
 
@@ -72,6 +78,8 @@ public class SideMenuBinder extends RecyclerViewBinder<SideMenuEnt> {
         LinearLayout llItem;
         @BindView(R.id.ll_mainFrame)
         RelativeLayout llMainFrame;
+        @BindView(R.id.seperator)
+        View seperator;
 
 
         ViewHolder(View view) {

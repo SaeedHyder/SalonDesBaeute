@@ -43,9 +43,9 @@
             <ImageView
                 android:id="@+id/btnNotificatoin"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/x15"
+                android:layout_marginEnd="@dimen/x10"
                 android:layout_toStartOf="@+id/btnSearch"
                 android:paddingBottom="@dimen/x10"
                 android:paddingEnd="@dimen/x5"
@@ -57,7 +57,7 @@
             <ImageView
                 android:id="@+id/btnSearch"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/x10"
@@ -106,6 +106,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="@dimen/x5"
                 android:layout_marginEnd="@dimen/x20"
+
                 custom:ci_drawable="@drawable/red_radius"
                 custom:ci_drawable_unselected="@drawable/white_radius" />
 
